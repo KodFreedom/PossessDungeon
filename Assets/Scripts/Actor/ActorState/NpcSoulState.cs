@@ -6,18 +6,14 @@ namespace ProjectBaka
 {
     public class NpcSoulState : ActorState
     {
-        MeshRenderer mesh_renderer_ = null;
-
-
         public override void Init(ActorController actor_controller)
         {
-            mesh_renderer_ = gameObject.GetComponentInChildren<MeshRenderer>();
-            mesh_renderer_.enabled = false;
+            gameObject.SetActive(false);
         }
 
         public override void Uninit(ActorController actor_controller)
         {
-
+            gameObject.SetActive(true);
         }
 
         public override void Act(ActorController actor_controller)

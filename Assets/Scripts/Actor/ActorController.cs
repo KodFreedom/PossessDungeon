@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ProjectBaka
 {
+    [RequireComponent(typeof(ActorParameter))]
     public class ActorController : MonoBehaviour
     {
         /// <summary>
@@ -28,17 +29,20 @@ namespace ProjectBaka
 
         [SerializeField] BrainType brain_type_ = BrainType.kPlayer;
         [SerializeField] ActorType actor_type_ = ActorType.kInnsmouth;
-        [SerializeField] float move_speed_ = 1f;
-        public float MoveSpeed { get { return move_speed_; } }
-        [SerializeField] float turn_speed_ = 360f;
-        public float TurnSpeed { get { return turn_speed_; } }
+
+        private ActorParameter actor_parameter_ = null;
         private ActorState actor_state_ = null;
 
         public BrainType GetBrainType() { return brain_type_; }
-        public void SetBrainType(BrainType new_type) { brain_type_ = new_type; }
         public ActorType GetActorType() { return actor_type_; }
+        public ActorParameter GetActorParameter() { return actor_parameter_; }
+        public void SetBrainType(BrainType new_type) { brain_type_ = new_type; }
         public void SetActorType(ActorType new_type) { actor_type_ = new_type; }
 
+        /// <summary>
+        /// ステートの切り替え
+        /// </summary>
+        /// <param name="next_state"></param>
         public void ChangeState(ActorState next_state)
         {
             actor_state_.Uninit(this);
@@ -49,8 +53,10 @@ namespace ProjectBaka
         }
 
         // Use this for initialization
-        void Start()
+        private void Start()
         {
+            actor_parameter_ = GetComponent<ActorParameter>();
+
             // 初期ステートの生成
             switch (actor_type_)
             {
@@ -66,10 +72,7 @@ namespace ProjectBaka
                 case ActorType.kSoul:
                     {
                         var soul_state = gameObject.AddComponent<SoulState>();
-                        SoulState.Parameter parameter;
-                        parameter.max_soul_amount = 100f;
-                        parameter.soul_amount = 100f;
-                        soul_state.SetParameter(parameter);
+                        soul_state.SetSoulAmount(SoulState.kMaxSoulAmount);
                         actor_state_ = soul_state;
                         break;
                     }
@@ -81,7 +84,7 @@ namespace ProjectBaka
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             actor_state_.Act(this);
         }
