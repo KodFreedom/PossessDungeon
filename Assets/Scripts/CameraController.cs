@@ -6,11 +6,19 @@ namespace ProjectBaka
 {
     public class CameraController : MonoBehaviour
     {
-        [SerializeField] Vector3 offset_ = new Vector3(0f, 5f, 0f);
-        [SerializeField] float move_speed_ = 1f;
-        [SerializeField] bool lock_cursor_ = false;
-        [SerializeField] Transform target_ = null;
+        private enum CameraMode
+        {
+            kLerp,
+            kDirect,
+        }
+
+        [SerializeField, Range(0f, 1f)] float kLerpOverDistance = 0.01f;
+        [SerializeField] Vector3 kOffset = new Vector3(0f, 5f, 0f);
+        [SerializeField] float kMoveSpeed = 1f;
+        [SerializeField] bool kLockCursor = false;
+        private Transform target_ = null;
         private Vector3 target_position_ = Vector3.zero;
+        private CameraMode mode_ = CameraMode.kLerp;
 
         /// <summary>
         /// ターゲットの設定
@@ -19,6 +27,7 @@ namespace ProjectBaka
         public void SetTarget(Transform target)
         {
             target_ = target;
+            mode_ = CameraMode.kLerp;
         }
 
         /// <summary>
@@ -31,8 +40,8 @@ namespace ProjectBaka
 
         private void Start()
         {
-            Cursor.lockState = lock_cursor_ ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !lock_cursor_;
+            Cursor.lockState = kLockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !kLockCursor;
         }
 
         private void OnDisable()
@@ -49,8 +58,20 @@ namespace ProjectBaka
         private void FollowTarget()
         {
             if (target_ == null) return;
-            target_position_ = Vector3.Lerp(target_position_, target_.position, Time.deltaTime * move_speed_);
-            transform.position = target_position_ + offset_;
+
+            if(mode_ == CameraMode.kLerp)
+            {
+                target_position_ = Vector3.Lerp(target_position_, target_.position, Time.deltaTime * kMoveSpeed);
+                if(Vector3.Distance(target_position_, target_.position) <= kLerpOverDistance)
+                {
+                    mode_ = CameraMode.kDirect;
+                }
+            }
+            else
+            {
+                target_position_ = target_.position;
+            }
+            transform.position = target_position_ + kOffset;
         }
     }
 }
