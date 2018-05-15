@@ -76,6 +76,7 @@ namespace ProjectBaka
                 monster_transform.rotation);
         }
 
+        // 入力処理
         private void UpdateInput()
         {
             // 入力情報の取得
@@ -98,8 +99,8 @@ namespace ProjectBaka
 
             ActorParameter parameter = actor_controller.GetActorParameter();
 
-            // TODO : 地面の法線を求める
-            var movement = Vector3.ProjectOnPlane(transform.forward, Vector3.up) * direction_magnitude * parameter.MoveSpeed;
+            var movement = Vector3.ProjectOnPlane(transform.forward, CheckGroundNormal())
+                * direction_magnitude * parameter.MoveSpeed;
             transform.position += movement * Time.deltaTime;
 
             // 物理演算の時の回転を切ったのため直接にtransformで回転する
@@ -149,7 +150,7 @@ namespace ProjectBaka
             actor_controller.SetBrainType(ActorController.BrainType.kNPC);
             switch (actor_controller.GetActorType())
             {
-                case ActorController.ActorType.kInnsmouth:
+                case ActorController.ActorType.kAnonymous:
                     actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
                     break;
                 case ActorController.ActorType.kGolem:
@@ -163,6 +164,40 @@ namespace ProjectBaka
                     break;
                 default:
                     break;
+            }
+        }
+
+        // 地面法線取得
+        private Vector3 CheckGroundNormal()
+        {
+            RaycastHit hit_info;
+
+            // 着地した
+            // 速度を地面速度にして、地面法線を返す
+            if (Physics.Raycast(transform.position, Vector3.down, out hit_info, 0.1f))
+            {
+                //IsGrounded = true;
+                return hit_info.normal;
+            }
+
+            // 空中にいる
+            // 速度を空中速度にして、上方向を返す
+            else
+            {
+                //IsGrounded = false;
+                return Vector3.up;
+            }
+        }
+
+        // 乗り移ってるときに魂ゲージを減る
+        private void ReduceSoulAmount(ActorController actor_controller)
+        {
+            soul_amount_ -= actor_controller.GetActorParameter().SoulDamage;
+            if(soul_amount_ <= 0f)
+            {
+                soul_amount_ = 0f;
+
+                // TODO : Game Over
             }
         }
     }

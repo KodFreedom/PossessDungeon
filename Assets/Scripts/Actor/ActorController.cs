@@ -21,14 +21,14 @@ namespace ProjectBaka
         /// </summary>
         public enum ActorType
         {
-            kInnsmouth = 0,
+            kAnonymous = 0,
             kGolem,
             kCarbuncle,
             kSoul
         }
 
         [SerializeField] BrainType brain_type_ = BrainType.kPlayer;
-        [SerializeField] ActorType actor_type_ = ActorType.kInnsmouth;
+        [SerializeField] ActorType actor_type_ = ActorType.kAnonymous;
 
         private ActorParameter actor_parameter_ = null;
         private ActorState actor_state_ = null;
@@ -60,7 +60,7 @@ namespace ProjectBaka
             // 初期ステートの生成
             switch (actor_type_)
             {
-                case ActorType.kInnsmouth:
+                case ActorType.kAnonymous:
                     actor_state_ = gameObject.AddComponent<NpcDemoState>();
                     break;
                 case ActorType.kGolem:
