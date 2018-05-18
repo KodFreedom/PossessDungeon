@@ -8,8 +8,8 @@ namespace ProjectBaka
     {
         public static readonly float kMaxSoulAmount = 2000f;
 
+        [SerializeField] float soul_amount_ = 0f;
         private static ActorController soul_ = null;
-        private float soul_amount_ = 0f;
         private RelyDetector rely_detector_ = null;
 
         // input
