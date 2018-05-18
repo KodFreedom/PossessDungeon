@@ -69,16 +69,7 @@ namespace ProjectBaka
             Move(actor_controller);
             RelyOnTarget(actor_controller);
             ReturnToSoul(actor_controller);
-
-            if(soul_amount_ <= 0f)
-            {// die
-                CameraController camera = Camera.main.GetComponent<CameraController>();
-                if (camera != null)
-                {
-                    camera.SetTarget(null);
-                }
-                Destroy(gameObject);
-            }
+            ReduceSoulAmount(actor_controller);
         }
 
         /// <summary>
@@ -239,8 +230,12 @@ namespace ProjectBaka
             if(soul_amount_ <= 0f)
             {
                 soul_amount_ = 0f;
-
-                // TODO : Game Over
+                CameraController camera = Camera.main.GetComponent<CameraController>();
+                if (camera != null)
+                {
+                    camera.SetTarget(null);
+                }
+                Destroy(gameObject);
             }
         }
     }
