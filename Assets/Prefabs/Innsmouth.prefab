@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 54901477045509864}
   - component: {fileID: 114891770968821212}
   - component: {fileID: 114296370441292612}
+  - component: {fileID: 114044422204402312}
   m_Layer: 8
   m_Name: Innsmouth
   m_TagString: Npc
@@ -130,6 +131,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &114044422204402312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093080887372490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc323c0acbe19e24c9bfd7a1c5e111f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points_: []
 --- !u!114 &114296370441292612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_life_: 1500
+  life_: 0
   move_speed_: 2
   turn_speed_: 1440
   soul_damage_: 10
