@@ -11,6 +11,9 @@ namespace ProjectBaka
         public abstract void Uninit(ActorController actor_controller);
 
         public abstract void Act(ActorController actor_controller);
-    }
 
+        public abstract void Burn(ActorController actor_controller);
+
+        public abstract void Swim(ActorController actor_controller);
+    }
 }
