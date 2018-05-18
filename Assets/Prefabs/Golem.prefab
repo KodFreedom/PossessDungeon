@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 54310978180120210}
   - component: {fileID: 114648901929605786}
   - component: {fileID: 114199164952466732}
+  - component: {fileID: 114381656948218906}
   m_Layer: 8
   m_Name: Golem
   m_TagString: Npc
@@ -143,6 +144,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brain_type_: 1
   actor_type_: 1
+--- !u!114 &114381656948218906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1258796437790384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc323c0acbe19e24c9bfd7a1c5e111f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points_: []
 --- !u!114 &114648901929605786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_life_: 3000
+  life_: 0
   move_speed_: 1
   turn_speed_: 720
   soul_damage_: 20
