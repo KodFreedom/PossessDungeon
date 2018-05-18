@@ -60,9 +60,52 @@ namespace ProjectBaka
         public override void Act(ActorController actor_controller)
         {
             UpdateInput();
+
+            if (actor_controller.GetActorParameter().Life <= 0f)
+            {// 肉体が死ぬ時魂に戻る
+                return_ = true;
+            }
+
             Move(actor_controller);
             RelyOnTarget(actor_controller);
             ReturnToSoul(actor_controller);
+
+            if(soul_amount_ <= 0f)
+            {// die
+                CameraController camera = Camera.main.GetComponent<CameraController>();
+                if (camera != null)
+                {
+                    camera.SetTarget(null);
+                }
+                Destroy(gameObject);
+            }
+        }
+
+        /// <summary>
+        /// 火に入った処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void Burn(ActorController actor_controller)
+        {
+            if (actor_controller.GetActorType() != ActorController.ActorType.kSoul)
+                return;
+
+            // 魂を燃やす
+            soul_amount_ = Mathf.Clamp(soul_amount_ - actor_controller.GetActorParameter().FireDamage
+                            , 0f, kMaxSoulAmount);
+        }
+
+        /// <summary>
+        /// 水に入った処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void Swim(ActorController actor_controller)
+        {
+            if (actor_controller.GetActorParameter().CanSwimming == true)
+                return;
+
+            // 魂を消す
+            soul_amount_ = 0f;
         }
 
         /// <summary>

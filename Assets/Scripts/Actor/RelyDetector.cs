@@ -9,7 +9,7 @@ namespace ProjectBaka
         private GameObject target_ = null;
         public GameObject Target { get { return target_; } }
 
-        int actor_layer_ = 0;
+        private int actor_layer_ = 0;
 
         // Use this for initialization
         void Start()

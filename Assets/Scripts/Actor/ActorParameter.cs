@@ -7,13 +7,13 @@ namespace ProjectBaka
     public class ActorParameter : MonoBehaviour
     {
         [SerializeField] float max_life_ = 0f;
+        [SerializeField] float life_ = 0f;
         [SerializeField] float move_speed_ = 0f;
         [SerializeField] float turn_speed_ = 0f;
         [SerializeField] float soul_damage_ = 0f;
         [SerializeField] float fire_damage_ = 0f;
         [SerializeField, Range(0f, 1f)] float push_strength_ = 0f;
         [SerializeField] bool can_swimming_ = false;
-        private float life_ = 0f;
 
         public float MaxLife { get { return max_life_; } }
         public float Life { get { return life_; } }

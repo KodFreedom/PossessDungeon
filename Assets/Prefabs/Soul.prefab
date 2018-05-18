@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4509237592826410}
-  - component: {fileID: 33259050765930326}
   - component: {fileID: 135214898375214376}
   - component: {fileID: 54435833045107390}
   - component: {fileID: 114429233765167800}
@@ -116,13 +115,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975058697302542}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33259050765930326
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1093181784789736}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54435833045107390
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -163,9 +155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_life_: 0
-  move_speed_: 30
+  move_speed_: 3
   turn_speed_: 2160
   soul_damage_: 0
+  fire_damage_: 0
+  push_strength_: 0
+  can_swimming_: 0
 --- !u!135 &135214898375214376
 SphereCollider:
   m_ObjectHideFlags: 1

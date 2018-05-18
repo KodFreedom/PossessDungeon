@@ -52,6 +52,29 @@ namespace ProjectBaka
             actor_state_.Init(this);
         }
 
+        /// <summary>
+        /// 火に入った処理
+        /// </summary>
+        public void Burn()
+        {
+            float life = actor_parameter_.Life;
+            life = Mathf.Clamp(life - actor_parameter_.FireDamage, 0f, actor_parameter_.MaxLife);
+            actor_parameter_.SetLife(life);
+            actor_state_.Burn(this);
+        }
+
+        /// <summary>
+        /// 水に入った処理
+        /// </summary>
+        public void Swim()
+        {
+            if(!actor_parameter_.CanSwimming)
+            {
+                actor_parameter_.SetLife(0f);
+            }
+            actor_state_.Swim(this);
+        }
+
         // Use this for initialization
         private void Start()
         {

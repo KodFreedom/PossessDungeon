@@ -20,5 +20,23 @@ namespace ProjectBaka
         {
 
         }
+
+        /// <summary>
+        /// 火に入った処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void Burn(ActorController actor_controller)
+        {
+
+        }
+
+        /// <summary>
+        /// 水に入った処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void Swim(ActorController actor_controller)
+        {
+
+        }
     }
 }

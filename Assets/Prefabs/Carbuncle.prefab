@@ -36,7 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4393775159920668}
-  - component: {fileID: 33001098015336666}
   - component: {fileID: 136026268550113976}
   - component: {fileID: 54983661094309434}
   - component: {fileID: 114215873438786686}
@@ -109,13 +108,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33001098015336666
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1892787346639278}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33053382327784680
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -163,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_life_: 800
-  move_speed_: 45
+  move_speed_: 4.5
   turn_speed_: 3240
   soul_damage_: 5
   fire_damage_: 50
