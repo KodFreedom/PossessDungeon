@@ -226,7 +226,7 @@ namespace ProjectBaka
         // 乗り移ってるときに魂ゲージを減る
         private void ReduceSoulAmount(ActorController actor_controller)
         {
-            soul_amount_ -= actor_controller.GetActorParameter().SoulDamage;
+            soul_amount_ -= actor_controller.GetActorParameter().SoulDamage * Time.deltaTime;
             if(soul_amount_ <= 0f)
             {
                 soul_amount_ = 0f;
