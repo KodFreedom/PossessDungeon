@@ -205,6 +205,9 @@ namespace ProjectBaka
         private void ReduceSoulAmount(ActorController actor_controller)
         {
             soul_amount_ -= actor_controller.GetActorParameter().SoulDamage * Time.deltaTime;
+
+            SoulGaugeController.Instance.SetLifeRate(soul_amount_ / kMaxSoulAmount);
+
             if(soul_amount_ <= 0f)
             {
                 soul_amount_ = 0f;
