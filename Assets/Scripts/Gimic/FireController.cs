@@ -19,7 +19,7 @@ namespace ProjectBaka
         private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.layer != actor_layer_
-                || other.gameObject.layer != soul_layer_)
+                && other.gameObject.layer != soul_layer_)
                 return;
 
             other.gameObject.GetComponent<ActorController>().Burn();

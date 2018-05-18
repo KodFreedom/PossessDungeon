@@ -58,7 +58,7 @@ namespace ProjectBaka
         public void Burn()
         {
             float life = actor_parameter_.Life;
-            life = Mathf.Clamp(life - actor_parameter_.FireDamage, 0f, actor_parameter_.MaxLife);
+            life = Mathf.Clamp(life - actor_parameter_.FireDamage * Time.deltaTime, 0f, actor_parameter_.MaxLife);
             actor_parameter_.SetLife(life);
             actor_state_.Burn(this);
         }
