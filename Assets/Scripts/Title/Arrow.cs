@@ -11,6 +11,11 @@ public class Arrow : MonoBehaviour
     private bool ButtonReleaseFlag;     // 左右ボタンを離したフラグ
     private bool SceneChangeFlag;       // 画面遷移したフラグ
 
+    [SerializeField]
+    private GameObject TutorialImg;
+    [SerializeField]
+    private GameObject GameStartImg;
+
     // Use this for initialization
     void Start()
     {
@@ -41,6 +46,19 @@ public class Arrow : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") == 0 && ButtonReleaseFlag == true)
         {
             ButtonReleaseFlag = false;
+        }
+
+        // 選択していないほうを点滅させない
+        if (ArrowFlag == false)
+        {
+            TutorialImg.GetComponent<ImgScaling>().enabled = true;
+            GameStartImg.GetComponent<ImgScaling>().enabled = false;
+
+        }
+        else if (ArrowFlag == true)
+        {
+            TutorialImg.GetComponent<ImgScaling>().enabled = false;
+            GameStartImg.GetComponent<ImgScaling>().enabled = true;
         }
 
         // 決定されたら画面遷移
