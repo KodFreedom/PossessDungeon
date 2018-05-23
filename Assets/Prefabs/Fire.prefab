@@ -19,9 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4022260180244580}
-  - component: {fileID: 33422852844226288}
   - component: {fileID: 65266450634673682}
-  - component: {fileID: 23284530875541826}
   - component: {fileID: 114616751307946850}
   m_Layer: 0
   m_Name: Fire
@@ -43,47 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23284530875541826
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216546268222478}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1e880a02829cb1f42b9bd7e13a7d14ef, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &33422852844226288
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216546268222478}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65266450634673682
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -107,3 +64,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf9f193115df744a0a0987d399dbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire_prefab_: {fileID: 100000, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
+  fire_distance_: {x: 0.1, y: 0.2}
