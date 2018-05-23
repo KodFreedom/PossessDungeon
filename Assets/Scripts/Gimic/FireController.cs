@@ -7,7 +7,7 @@ namespace ProjectBaka
     public class FireController : MonoBehaviour
     {
         [SerializeField] GameObject fire_prefab_ = null;
-        //[SerializeField] Vector3 fire_offset = V
+        [SerializeField] Vector3 fire_offset = Vector3.zero;
         [SerializeField] Vector2 fire_distance_ = new Vector2(0.1f, 0.2f);
         private int actor_layer_ = 0;
         private int soul_layer_ = 0;
@@ -44,6 +44,7 @@ namespace ProjectBaka
             int vertical_number = (int)(transform.localScale.z / fire_distance_.y);
 
             Vector3 offset = transform.position
+                        + fire_offset
                         - transform.forward * vertical_number * fire_distance_.y * 0.5f
                         - transform.right * horizontal_number * fire_distance_.x * 0.5f;
 
@@ -54,7 +55,6 @@ namespace ProjectBaka
                     var fire = Instantiate(fire_prefab_);
                     fire.transform.position = offset
                         + transform.forward * count_vertical * fire_distance_.y
-                        + transform.up * 0.5f
                         + transform.right * count_horizontal * fire_distance_.x;
                 }
             }
