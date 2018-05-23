@@ -138,7 +138,7 @@ namespace ProjectBaka
             transform.position += movement * Time.deltaTime;
 
             // 物理演算の時の回転を切ったのため直接にtransformで回転する
-            direction_ = transform.InverseTransformDirection(direction_);
+            //direction_ = transform.InverseTransformDirection(direction_);
             var turn_amount = Mathf.Atan2(direction_.x, direction_.z);
             transform.Rotate(0f, turn_amount * parameter.TurnSpeed * Time.deltaTime, 0f);
         }
