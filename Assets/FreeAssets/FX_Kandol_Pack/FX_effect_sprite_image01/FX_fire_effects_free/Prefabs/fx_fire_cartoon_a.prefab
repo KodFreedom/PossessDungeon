@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   m_Layer: 0
-  m_Name: fx_fire_ball_bbb
+  m_Name: fx_fire_cartoon_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.83588827, y: -1.0164542, z: 0}
+  m_LocalPosition: {x: 1.291143, y: 1.2741073, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1067,8 +1067,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    tilesX: 4
-    tilesY: 4
+    tilesX: 5
+    tilesY: 5
     animationType: 0
     rowIndex: 0
     cycles: 1
@@ -3340,7 +3340,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: d627e16ab0af44c4788674664c370e72, type: 2}
+  - {fileID: 2100000, guid: 8fb533a8b56a25d4a9cf8ce5a33f127b, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
