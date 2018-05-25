@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ProjectBaka;
 
 public class Arrow : MonoBehaviour
 {
@@ -32,14 +33,14 @@ public class Arrow : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") > 0.3f)
             {
                 ArrowRect.localPosition = new Vector3(ArrowRect.localPosition.x * -1, ArrowRect.localPosition.y, ArrowRect.localPosition.z);
-                ArrowFlag = true;
+                ArrowFlag = !ArrowFlag;
                 ButtonReleaseFlag = true;
             }
             // 左入力
             else if (Input.GetAxisRaw("Horizontal") < -0.3f)
             {
                 ArrowRect.localPosition = new Vector3(ArrowRect.localPosition.x * -1, ArrowRect.localPosition.y, ArrowRect.localPosition.z);
-                ArrowFlag = false;
+                ArrowFlag = !ArrowFlag;
                 ButtonReleaseFlag = true;
             }
         }
@@ -68,12 +69,14 @@ public class Arrow : MonoBehaviour
             {
                 if (ArrowFlag == false)
                 {
-                    Debug.Log("チュートリアル");   // ここにシーン遷移
+                    // シーン遷移
+                    //SceneManager.Instance.ChangeScene("Tutorial");
                     SceneChangeFlag = true;
                 }
                 else if (ArrowFlag == true)
                 {
-                    Debug.Log("ゲームスタート");   // ここにシーン遷移
+                    // シーン遷移
+                    //SceneManager.Instance.ChangeScene("StageSelect");
                     SceneChangeFlag = true;
                 }
             }
