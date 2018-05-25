@@ -6,14 +6,21 @@ namespace ProjectBaka
 {
     public class RelyDetector : MonoBehaviour
     {
+        private static GameObject kRelyUiPrefab = null;
         private GameObject target_ = null;
         public GameObject Target { get { return target_; } }
 
         private int actor_layer_ = 0;
+        private RelyUiController rely_ui_controller_ = null;
 
         // Use this for initialization
         void Start()
         {
+            if(kRelyUiPrefab == null)
+            {
+                kRelyUiPrefab = (GameObject)Resources.Load("Prefabs/RelyUi", typeof(GameObject));
+            }
+
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
             var collider = gameObject.AddComponent<BoxCollider>();
@@ -21,6 +28,16 @@ namespace ProjectBaka
             collider.center = new Vector3(0.0f, 0.0f, 5.0f);
             collider.size = new Vector3(2.0f, 5.0f, 10.0f);
             actor_layer_ = LayerMask.NameToLayer("Actor");
+
+            // UIの生成
+            rely_ui_controller_ = GameObject.Instantiate(kRelyUiPrefab).GetComponent<RelyUiController>();
+        }
+
+        private void OnDestroy()
+        {
+            // UIの破棄
+            if (rely_ui_controller_ == null) return;
+            Destroy(rely_ui_controller_.gameObject);
         }
 
         private void OnTriggerStay(Collider other)
@@ -36,6 +53,9 @@ namespace ProjectBaka
             {// 距離を計算し、近いの方をターゲットにする
                 target_ = GetClosestTarget(target_, other.gameObject);
             }
+
+            // UI
+            rely_ui_controller_.SetTarget(target_.transform);
         }
 
         private void OnTriggerExit(Collider other)
@@ -44,6 +64,7 @@ namespace ProjectBaka
                 && other.gameObject == target_)
             {
                 target_ = null;
+                rely_ui_controller_.SetTarget(null);
             }
         }
 
