@@ -19,9 +19,7 @@ namespace ProjectBaka
             if (is_pressed) return;
             is_pressed = true;
             OverrideEventSystem.Instance.SetSelectedObject(null);
-
-
-            //SceneManager.Instance.ChangeScene(kNextSceneName);
+            SceneManager.Instance.ChangeScene(kNextSceneName);
         }
     }
 }
