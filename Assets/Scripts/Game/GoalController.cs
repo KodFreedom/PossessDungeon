@@ -25,7 +25,7 @@ namespace ProjectBaka
             var actor_controller = other.gameObject.GetComponent<ActorController>();
             if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
 
-            // TODO: clear
+            GameFlowController.Instance.GameClear();
         }
     }
 }

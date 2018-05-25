@@ -113,6 +113,14 @@ namespace ProjectBaka
         // 入力処理
         private void UpdateInput()
         {
+            if(Time.timeScale == 0f)
+            {// PauseまたはClear/GameOverの場合
+                rely_ = false;
+                return_ = false;
+                direction_ = Vector3.zero;
+                return;
+            }
+
             // 入力情報の取得
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
