@@ -88,17 +88,17 @@ namespace ProjectBaka
         // 更新処理
         private void Update()
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-                if (kPausePanel.gameObject.activeInHierarchy)
-                {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
-                }
-            }
+            //if (Input.GetButtonDown("Jump"))
+            //{
+            //    if (kPausePanel.gameObject.activeInHierarchy)
+            //    {
+            //        Resume();
+            //    }
+            //    else
+            //    {
+            //        Pause();
+            //    }
+            //}
         }
 
         // ポーズ処理

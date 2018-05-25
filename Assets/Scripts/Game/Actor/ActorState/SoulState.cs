@@ -99,15 +99,28 @@ namespace ProjectBaka
             soul_amount_ = 0f;
         }
 
-        /// <summary>
-        /// 魂の位置を今モンスターの右隣にする処理
-        /// </summary>
-        /// <param name="monster_transform">乗り移ってる相手の位置</param>
-        public void SetSoulTransform(Transform monster_transform)
+        // 今の器をNpcに切り替える
+        protected void ChangeStateToNpc(ActorController actor_controller)
         {
-            transform.SetPositionAndRotation(
-                monster_transform.position + monster_transform.right,
-                monster_transform.rotation);
+            gameObject.tag = "Npc";
+            actor_controller.SetBrainType(ActorController.BrainType.kNPC);
+            switch (actor_controller.GetActorType())
+            {
+                case ActorController.ActorType.kAnonymous:
+                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
+                    break;
+                case ActorController.ActorType.kGolem:
+                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
+                    break;
+                case ActorController.ActorType.kCarbuncle:
+                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
+                    break;
+                case ActorController.ActorType.kSoul:
+                    actor_controller.ChangeState(gameObject.AddComponent<NpcSoulState>());
+                    break;
+                default:
+                    break;
+            }
         }
 
         // 入力処理
@@ -157,14 +170,10 @@ namespace ProjectBaka
             if (!rely_ || rely_detector_.Target == null) return;
 
             // Target
-            var target_controller = rely_detector_.Target.GetComponent<ActorController>();
-            target_controller.SetBrainType(ActorController.BrainType.kPlayer);
-            var target_soul_state = rely_detector_.Target.AddComponent<SoulState>();
-            target_soul_state.SetSoulAmount(soul_amount_);
-            target_controller.ChangeState(target_soul_state);
-
-            // This
-            ChangeStateToNpc(actor_controller);
+            var soul_rely_state = gameObject.AddComponent<SoulRelyState>();
+            soul_rely_state.SetSoulAmount(soul_amount_);
+            soul_rely_state.SetTarget(rely_detector_.Target.GetComponent<ActorController>());
+            actor_controller.ChangeState(soul_rely_state);
         }
 
         // 魂に戻る処理
@@ -176,37 +185,14 @@ namespace ProjectBaka
 
             // Soul
             soul_.SetBrainType(ActorController.BrainType.kPlayer);
-            var soul_state = soul_.gameObject.AddComponent<SoulState>();
+            var soul_state = soul_.gameObject.AddComponent<SoulReturnState>();
             soul_state.SetSoulAmount(soul_amount_);
-            soul_state.SetSoulTransform(transform);
+            soul_state.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            soul_state.SetReturnPoint(transform.position + transform.right * 2f);
             soul_.ChangeState(soul_state);
 
             // This
             ChangeStateToNpc(actor_controller);
-        }
-
-        // 今の器をNpcに切り替える
-        private void ChangeStateToNpc(ActorController actor_controller)
-        {
-            gameObject.tag = "Npc";
-            actor_controller.SetBrainType(ActorController.BrainType.kNPC);
-            switch (actor_controller.GetActorType())
-            {
-                case ActorController.ActorType.kAnonymous:
-                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
-                    break;
-                case ActorController.ActorType.kGolem:
-                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
-                    break;
-                case ActorController.ActorType.kCarbuncle:
-                    actor_controller.ChangeState(gameObject.AddComponent<NpcDemoState>());
-                    break;
-                case ActorController.ActorType.kSoul:
-                    actor_controller.ChangeState(gameObject.AddComponent<NpcSoulState>());
-                    break;
-                default:
-                    break;
-            }
         }
 
         // 乗り移ってるときに魂ゲージを減る
