@@ -169,11 +169,26 @@ namespace ProjectBaka
         {
             if (!rely_ || rely_detector_.Target == null) return;
 
-            // Target
-            var soul_rely_state = gameObject.AddComponent<SoulRelyState>();
-            soul_rely_state.SetSoulAmount(soul_amount_);
-            soul_rely_state.SetTarget(rely_detector_.Target.GetComponent<ActorController>());
-            actor_controller.ChangeState(soul_rely_state);
+            if(actor_controller.GetActorType() != ActorController.ActorType.kSoul)
+            {// 魂に戻ってから乗り移る
+                soul_.SetBrainType(ActorController.BrainType.kPlayer);
+                var soul_rely_state = soul_.gameObject.AddComponent<SoulRelyState>();
+                soul_rely_state.transform.SetPositionAndRotation(transform.position, transform.rotation);
+                soul_rely_state.SetSoulAmount(soul_amount_);
+                soul_rely_state.SetTarget(rely_detector_.Target.GetComponent<ActorController>());
+                soul_.ChangeState(soul_rely_state);
+
+                // This
+                ChangeStateToNpc(actor_controller);
+            }
+            else
+            {
+                // Target
+                var soul_rely_state = gameObject.AddComponent<SoulRelyState>();
+                soul_rely_state.SetSoulAmount(soul_amount_);
+                soul_rely_state.SetTarget(rely_detector_.Target.GetComponent<ActorController>());
+                actor_controller.ChangeState(soul_rely_state);
+            }
         }
 
         // 魂に戻る処理
