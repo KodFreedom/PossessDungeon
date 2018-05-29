@@ -75,6 +75,22 @@ namespace ProjectBaka
             actor_state_.Swim(this);
         }
 
+        /// <summary>
+        /// 岩を押す処理
+        /// </summary>
+        public void OnPushEnter()
+        {
+            actor_state_.OnPushEnter(this);
+        }
+
+        /// <summary>
+        /// 岩を押す処理
+        /// </summary>
+        public void OnPushExit()
+        {
+            actor_state_.OnPushExit(this);
+        }
+
         // Use this for initialization
         private void Start()
         {

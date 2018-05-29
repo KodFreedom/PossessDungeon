@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d306fdfbcbf408b4cb43c764487f742f
-timeCreated: 1526613421
+guid: 8db25b78d2f2e414b8cdcf8ec586ff7d
+timeCreated: 1527491312
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -105,6 +105,7 @@ ModelImporter:
     4300000: infernal003
     4300002: infernal2
     7400000: Take 001
+    7400002: mixamo.com
     9500000: //RootNode
     13700000: infernal2
   externalObjects: {}
@@ -135,10 +136,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
+      name: mixamo.com
+      takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 276
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -190,8 +191,8 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
-  copyAvatar: 0
+  importAnimation: 1
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -208,7 +209,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d306fdfbcbf408b4cb43c764487f742f,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
