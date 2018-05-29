@@ -25,9 +25,11 @@ namespace ProjectBaka
             {
                 var actor_controller = collision.gameObject.GetComponent<ActorController>();
                 if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
+
                 float push_strength = actor_controller.GetActorParameter().PushStrength;
                 rigidbody_.isKinematic = push_strength == 0f ? true : false;
                 rigidbody_.mass = kMaxMass * (1f - push_strength);
+                actor_controller.OnPushEnter();
             }
             else if (collision.gameObject.layer == soul_layer_)
             {
@@ -41,6 +43,7 @@ namespace ProjectBaka
             var actor_controller = collision.gameObject.GetComponent<ActorController>();
             if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
             rigidbody_.isKinematic = true;
+            actor_controller.OnPushExit();
         }
     }
 }

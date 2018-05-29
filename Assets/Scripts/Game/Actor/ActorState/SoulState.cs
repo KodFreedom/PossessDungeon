@@ -11,6 +11,7 @@ namespace ProjectBaka
         [SerializeField] float soul_amount_ = 0f;
         private static ActorController soul_ = null;
         private RelyDetector rely_detector_ = null;
+        private Animator animator_ = null;
 
         // input
         private Vector3 direction_ = Vector3.zero;
@@ -37,6 +38,8 @@ namespace ProjectBaka
                 camera.SetTarget(transform);
             }
 
+            animator_ = GetComponentInChildren<Animator>();
+
             gameObject.tag = "Player";
 
             var rely_detector_object = new GameObject("RelyDetector");
@@ -50,6 +53,12 @@ namespace ProjectBaka
         /// <param name="actor_controller"></param>
         public override void Uninit(ActorController actor_controller)
         {
+            if (animator_)
+            {
+                animator_.SetFloat("movement", 0f);
+                animator_.SetBool("push", false);
+            }
+            
             Destroy(rely_detector_.gameObject);
         }
 
@@ -97,6 +106,26 @@ namespace ProjectBaka
 
             // 魂を消す
             soul_amount_ = 0f;
+        }
+
+        /// <summary>
+        /// 岩を押す処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void OnPushEnter(ActorController actor_controller)
+        {
+            if (!animator_) return;
+            animator_.SetBool("push", true);
+        }
+
+        /// <summary>
+        /// 岩を押す処理
+        /// </summary>
+        /// <param name="actor_controller"></param>
+        public override void OnPushExit(ActorController actor_controller)
+        {
+            if (!animator_) return;
+            animator_.SetBool("push", false);
         }
 
         // 今の器をNpcに切り替える
@@ -148,6 +177,11 @@ namespace ProjectBaka
         private void Move(ActorController actor_controller)
         {
             float direction_magnitude = direction_.magnitude;
+
+            if (animator_)
+            {
+                animator_.SetFloat("movement", direction_magnitude);
+            }
 
             if (direction_magnitude == 0.0f)
                 return;
