@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 161311edf25b3a84f9e63dea96ce6ed8
+timeCreated: 1527491157
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: golem
+    100002: infernal003
+    100004: infernal2
+    100006: infernal2_bone_101
+    100008: infernal2_bone_103
+    100010: infernal2_bone_104
+    100012: infernal2_bone_105
+    100014: infernal2_bone_106
+    100016: infernal2_bone_107
+    100018: infernal2_bone_108
+    100020: infernal2_bone_109
+    100022: infernal2_bone_40
+    100024: infernal2_bone_41
+    100026: infernal2_bone_42
+    100028: infernal2_bone_43
+    100030: infernal2_bone_44
+    100032: infernal2_bone_45
+    100034: infernal2_bone_46
+    100036: infernal2_bone_47
+    100038: infernal2_bone_48
+    100040: infernal2_bone_49
+    100042: infernal2_bone_50
+    100044: infernal2_bone_51
+    100046: infernal2_bone_52
+    100048: infernal2_bone_53
+    100050: infernal2_bone_54
+    100052: infernal2_bone_55
+    100054: infernal2_bone_56
+    100056: infernal2_bone_57
+    100058: infernal2_bone_58
+    100060: infernal2_bone_59
+    100062: infernal2_bone_60
+    100064: infernal2_bone_61
+    100066: infernal2_bone_62
+    100068: infernal2_bone_63
+    100070: infernal2_bone_64
+    100072: infernal2_bone_65
+    100074: infernal2_bone_66
+    100076: infernal2_bone_67
+    100078: infernal2_bone_68
+    100080: infernal2_bone_83
+    100082: infernal2_bone_92
+    100084: infernal2_bone_98
+    100086: infernal2_bone_99
+    100088: //RootNode
+    400000: golem
+    400002: infernal003
+    400004: infernal2
+    400006: infernal2_bone_101
+    400008: infernal2_bone_103
+    400010: infernal2_bone_104
+    400012: infernal2_bone_105
+    400014: infernal2_bone_106
+    400016: infernal2_bone_107
+    400018: infernal2_bone_108
+    400020: infernal2_bone_109
+    400022: infernal2_bone_40
+    400024: infernal2_bone_41
+    400026: infernal2_bone_42
+    400028: infernal2_bone_43
+    400030: infernal2_bone_44
+    400032: infernal2_bone_45
+    400034: infernal2_bone_46
+    400036: infernal2_bone_47
+    400038: infernal2_bone_48
+    400040: infernal2_bone_49
+    400042: infernal2_bone_50
+    400044: infernal2_bone_51
+    400046: infernal2_bone_52
+    400048: infernal2_bone_53
+    400050: infernal2_bone_54
+    400052: infernal2_bone_55
+    400054: infernal2_bone_56
+    400056: infernal2_bone_57
+    400058: infernal2_bone_58
+    400060: infernal2_bone_59
+    400062: infernal2_bone_60
+    400064: infernal2_bone_61
+    400066: infernal2_bone_62
+    400068: infernal2_bone_63
+    400070: infernal2_bone_64
+    400072: infernal2_bone_65
+    400074: infernal2_bone_66
+    400076: infernal2_bone_67
+    400078: infernal2_bone_68
+    400080: infernal2_bone_83
+    400082: infernal2_bone_92
+    400084: infernal2_bone_98
+    400086: infernal2_bone_99
+    400088: //RootNode
+    2100000: infernal2_0
+    2100002: infernal2_1
+    2100004: infernal2_2
+    2100006: infernal2_3
+    2100008: infernal2_6
+    2300000: infernal003
+    3300000: infernal003
+    4300000: infernal003
+    4300002: infernal2
+    7400000: Take 001
+    7400002: mixamo.com
+    9500000: //RootNode
+    13700000: infernal2
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d306fdfbcbf408b4cb43c764487f742f,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

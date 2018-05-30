@@ -11,10 +11,13 @@ namespace ProjectBaka
         private Transform[] patrol_points_;
         private int patrol_counter_ = 0;
         private float wait_counter_ = 0f;
+        private Animator animator_ = null;
 
         public override void Init(ActorController actor_controller)
         {
             patrol_points_ = GetComponent<PatrolPoints>().Points;
+            animator_ = GetComponentInChildren<Animator>();
+            wait_counter_ = kWaitTime;
         }
 
         public override void Uninit(ActorController actor_controller)
@@ -56,6 +59,11 @@ namespace ProjectBaka
             if (wait_counter_ > 0f)
             {// しばらく待機
                 wait_counter_ -= Time.deltaTime;
+
+                if(animator_)
+                {
+                    animator_.SetFloat("movement", 0f);
+                }
                 return;
             }
 
@@ -76,6 +84,11 @@ namespace ProjectBaka
             {
                 wait_counter_ = kWaitTime;
                 patrol_counter_ = (patrol_counter_ + 1) % patrol_points_.Length;
+            }
+
+            if (animator_)
+            {
+                animator_.SetFloat("movement", 1f);
             }
         }
     }

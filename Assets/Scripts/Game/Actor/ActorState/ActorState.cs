@@ -16,6 +16,10 @@ namespace ProjectBaka
 
         public abstract void Swim(ActorController actor_controller);
 
+        public virtual void OnPushEnter(ActorController actor_controller) { }
+
+        public virtual void OnPushExit(ActorController actor_controller) { }
+
         // 地面法線取得
         protected Vector3 CheckGroundNormal()
         {
