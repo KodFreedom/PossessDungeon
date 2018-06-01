@@ -10,6 +10,7 @@ namespace ProjectBaka
         [SerializeField] Image blue_gauge_ = null;
         [SerializeField] Image red_gauge_ = null;
         [SerializeField, Range(0f, 1f)] float life_rate_ = 0f;
+        private Animator ui_animator_ = null;
 
         // シングルトーンインスタンスの生成
         private static SoulGaugeController instance_ = null;
@@ -35,6 +36,8 @@ namespace ProjectBaka
                 DestroyImmediate(gameObject);
                 return;
             }
+
+            ui_animator_ = GetComponentInChildren<Animator>();
         }
 
         // Update is called once per frame
@@ -42,6 +45,7 @@ namespace ProjectBaka
         {
             blue_gauge_.fillAmount = life_rate_;
             red_gauge_.fillAmount = 1f - life_rate_;
+            ui_animator_.SetFloat("LifeRate", life_rate_);
         }
     }
 }
