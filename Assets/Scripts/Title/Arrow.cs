@@ -76,7 +76,7 @@ public class Arrow : MonoBehaviour
                 else if (ArrowFlag == true)
                 {
                     // シーン遷移
-                    //SceneManager.Instance.ChangeScene("StageSelect");
+                    SceneManager.Instance.ChangeScene("StageSelect");
                     SceneChangeFlag = true;
                 }
             }
