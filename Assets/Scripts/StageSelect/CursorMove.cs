@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using ProjectBaka;
 
 public class CursorMove : MonoBehaviour {
 
@@ -58,17 +58,17 @@ public class CursorMove : MonoBehaviour {
             {
                 // Stage1シーンに遷移
                 case 0:
-                    SceneManager.LoadScene("Stage1");
+                    SceneManager.Instance.ChangeScene("GameStage01");
                     break;
 
                 // Stage2シーンに遷移
                 case 1:
-                    SceneManager.LoadScene("Stage2");
+                    //SceneManager.Instance.ChangeScene("GameStage02");
                     break;
 
                 // Stage3シーンに遷移
                 case 2:
-                    SceneManager.LoadScene("Stage3");
+                    //SceneManager.Instance.ChangeScene("GameStage03");
                     break;
             }
         }
