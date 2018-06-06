@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ProjectBaka
 {
@@ -21,6 +22,7 @@ namespace ProjectBaka
         {
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<SphereCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
         }
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace ProjectBaka
         {
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<SphereCollider>().enabled = true;
+            GetComponent<NavMeshAgent>().enabled = true;
         }
 
         /// <summary>

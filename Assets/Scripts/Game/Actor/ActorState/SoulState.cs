@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ProjectBaka
 {
@@ -12,6 +13,7 @@ namespace ProjectBaka
         private static ActorController soul_ = null;
         private RelyDetector rely_detector_ = null;
         private Animator animator_ = null;
+        private NavMeshAgent nav_mesh_agent_ = null;
 
         // input
         private Vector3 direction_ = Vector3.zero;
@@ -45,6 +47,12 @@ namespace ProjectBaka
             var rely_detector_object = new GameObject("RelyDetector");
             rely_detector_object.transform.SetParent(transform);
             rely_detector_ = rely_detector_object.AddComponent<RelyDetector>();
+
+            var parameter = actor_controller.GetActorParameter();
+            nav_mesh_agent_ = GetComponent<NavMeshAgent>();
+            nav_mesh_agent_.angularSpeed = parameter.TurnSpeed;
+            nav_mesh_agent_.updatePosition = true;
+            nav_mesh_agent_.updateRotation = false;
         }
 
         /// <summary>
@@ -184,13 +192,15 @@ namespace ProjectBaka
             }
 
             if (direction_magnitude == 0.0f)
+            {
                 return;
+            }
+                
 
             ActorParameter parameter = actor_controller.GetActorParameter();
 
-            var movement = Vector3.ProjectOnPlane(transform.forward, CheckGroundNormal())
-                * direction_magnitude * parameter.MoveSpeed;
-            transform.position += movement * Time.deltaTime;
+            var movement = direction_ * parameter.MoveSpeed;
+            nav_mesh_agent_.Move(direction_ * parameter.MoveSpeed * Time.deltaTime);
 
             // 物理演算の時の回転を切ったのため直接にtransformで回転する
             direction_ = transform.InverseTransformDirection(direction_);
