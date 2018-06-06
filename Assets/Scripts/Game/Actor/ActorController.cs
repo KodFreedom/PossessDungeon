@@ -68,10 +68,6 @@ namespace ProjectBaka
         /// </summary>
         public void Swim()
         {
-            if(!actor_parameter_.CanSwimming)
-            {
-                actor_parameter_.SetLife(0f);
-            }
             actor_state_.Swim(this);
         }
 

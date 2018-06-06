@@ -10,7 +10,9 @@ namespace ProjectBaka
         private GameObject target_ = null;
         public GameObject Target { get { return target_; } }
 
-        private int actor_layer_ = 0;
+        private int golem_layer_ = 0;
+        private int anonymous_layer_ = 0;
+        private int carbuncle_layer_ = 0;
         private RelyUiController rely_ui_controller_ = null;
 
         // Use this for initialization
@@ -27,7 +29,10 @@ namespace ProjectBaka
             collider.isTrigger = true;
             collider.center = new Vector3(0.0f, 0.0f, 5.0f);
             collider.size = new Vector3(2.0f, 5.0f, 10.0f);
-            actor_layer_ = LayerMask.NameToLayer("Actor");
+
+            golem_layer_ = LayerMask.NameToLayer("Golem");
+            anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
+            carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");
 
             // UIの生成
             rely_ui_controller_ = GameObject.Instantiate(kRelyUiPrefab).GetComponent<RelyUiController>();
@@ -42,8 +47,11 @@ namespace ProjectBaka
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.layer != actor_layer_
-                || target_ == other.gameObject) return;
+            if ((other.gameObject.layer != golem_layer_
+                && other.gameObject.layer != anonymous_layer_
+                && other.gameObject.layer != carbuncle_layer_)
+                || target_ == other.gameObject)
+                return;
 
             if (target_ == null)
             {
@@ -60,7 +68,9 @@ namespace ProjectBaka
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.layer == actor_layer_
+            if ((other.gameObject.layer == golem_layer_
+                || other.gameObject.layer == anonymous_layer_
+                || other.gameObject.layer == carbuncle_layer_)
                 && other.gameObject == target_)
             {
                 target_ = null;

@@ -113,11 +113,7 @@ namespace ProjectBaka
             if (actor_controller.GetActorParameter().CanSwimming == true)
             {
                 is_swimming_ = true;
-                return;
             }
-
-            // 魂を消す
-            soul_amount_ = 0f;
         }
 
         /// <summary>
@@ -200,10 +196,7 @@ namespace ProjectBaka
                 return;
             }
                 
-
             ActorParameter parameter = actor_controller.GetActorParameter();
-
-            var movement = direction_ * parameter.MoveSpeed;
             nav_mesh_agent_.Move(direction_ * parameter.MoveSpeed * Time.deltaTime);
 
             // 物理演算の時の回転を切ったのため直接にtransformで回転する
