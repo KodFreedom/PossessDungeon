@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114296370441292612}
   - component: {fileID: 114044422204402312}
   - component: {fileID: 195762256097901600}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Anonymous
   m_TagString: Npc
   m_Icon: {fileID: 0}

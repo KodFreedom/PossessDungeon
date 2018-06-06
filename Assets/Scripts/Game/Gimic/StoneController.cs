@@ -8,20 +8,26 @@ namespace ProjectBaka
     {
         [SerializeField] float kMaxMass = 2f;
         private Rigidbody rigidbody_ = null;
-        private int actor_layer_ = 0;
+        private int golem_layer_ = 0;
+        private int anonymous_layer_ = 0;
+        private int carbuncle_layer_ = 0;
         private int soul_layer_ = 0;
 
         private void Start()
         {
             rigidbody_ = gameObject.GetComponent<Rigidbody>();
             rigidbody_.isKinematic = true;
-            actor_layer_ = LayerMask.NameToLayer("Actor");
+            golem_layer_ = LayerMask.NameToLayer("Golem");
+            anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
+            carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");
             soul_layer_ = LayerMask.NameToLayer("Soul");
         }
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.layer == actor_layer_)
+            if (collision.gameObject.layer == golem_layer_
+                || collision.gameObject.layer == anonymous_layer_
+                || collision.gameObject.layer == carbuncle_layer_)
             {
                 var actor_controller = collision.gameObject.GetComponent<ActorController>();
                 if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
@@ -39,7 +45,10 @@ namespace ProjectBaka
 
         private void OnCollisionExit(Collision collision)
         {
-            if (collision.gameObject.layer != actor_layer_) return;
+            if (collision.gameObject.layer != golem_layer_
+                && collision.gameObject.layer != anonymous_layer_
+                && collision.gameObject.layer != carbuncle_layer_)
+                return;
             var actor_controller = collision.gameObject.GetComponent<ActorController>();
             if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
             rigidbody_.isKinematic = true;

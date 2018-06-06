@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 114170661860497000}
   - component: {fileID: 114678012478851898}
   - component: {fileID: 195992891876489078}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Carbuncle
   m_TagString: Npc
   m_Icon: {fileID: 0}

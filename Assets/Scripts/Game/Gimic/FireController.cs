@@ -9,13 +9,17 @@ namespace ProjectBaka
         [SerializeField] GameObject fire_prefab_ = null;
         [SerializeField] Vector3 fire_offset = Vector3.zero;
         [SerializeField] Vector2 fire_distance_ = new Vector2(0.1f, 0.2f);
-        private int actor_layer_ = 0;
+        private int golem_layer_ = 0;
+        private int anonymous_layer_ = 0;
+        private int carbuncle_layer_ = 0;
         private int soul_layer_ = 0;
 
         // Use this for initialization
         private void Start()
         {
-            actor_layer_ = LayerMask.NameToLayer("Actor");
+            golem_layer_ = LayerMask.NameToLayer("Golem");
+            anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
+            carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");
             soul_layer_ = LayerMask.NameToLayer("Soul");
             ClearEditorMesh();
             CreateFireInErea();
@@ -23,7 +27,9 @@ namespace ProjectBaka
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.layer != actor_layer_
+            if (other.gameObject.layer != golem_layer_
+                && other.gameObject.layer != anonymous_layer_
+                && other.gameObject.layer != carbuncle_layer_
                 && other.gameObject.layer != soul_layer_)
                 return;
 
