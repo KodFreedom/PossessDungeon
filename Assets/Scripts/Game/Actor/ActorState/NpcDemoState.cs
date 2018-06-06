@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ProjectBaka
 {
@@ -12,12 +13,20 @@ namespace ProjectBaka
         private int patrol_counter_ = 0;
         private float wait_counter_ = 0f;
         private Animator animator_ = null;
+        private NavMeshAgent nav_mesh_agent_ = null;
 
         public override void Init(ActorController actor_controller)
         {
             patrol_points_ = GetComponent<PatrolPoints>().Points;
             animator_ = GetComponentInChildren<Animator>();
             wait_counter_ = kWaitTime;
+
+            var parameter = actor_controller.GetActorParameter();
+            nav_mesh_agent_ = GetComponent<NavMeshAgent>();
+            nav_mesh_agent_.speed = parameter.MoveSpeed;
+            nav_mesh_agent_.angularSpeed = parameter.TurnSpeed;
+            nav_mesh_agent_.updatePosition = true;
+            nav_mesh_agent_.updateRotation = true;
         }
 
         public override void Uninit(ActorController actor_controller)
@@ -68,20 +77,14 @@ namespace ProjectBaka
             }
 
             // Move and turn
-            ActorParameter parameter = actor_controller.GetActorParameter();
-            Vector3 direction = Vector3.Scale(patrol_points_[patrol_counter_].position - transform.position,
-                new Vector3(1f, 0f, 1f)).normalized;
-            Vector3 movement = Vector3.ProjectOnPlane(transform.forward, CheckGroundNormal()) * parameter.MoveSpeed;
-            transform.position += movement * Time.deltaTime;
-
-            direction = transform.InverseTransformDirection(direction);
-            var turn_amount = Mathf.Atan2(direction.x, direction.z);
-            transform.Rotate(0f, turn_amount * parameter.TurnSpeed * Time.deltaTime, 0f);
+            nav_mesh_agent_.isStopped = false;
+            nav_mesh_agent_.SetDestination(patrol_points_[patrol_counter_].position);
 
             // 目標にある程度近づいたら待機して、次の目標に移動する
             if((transform.position - patrol_points_[patrol_counter_].position).sqrMagnitude
                 <= kArriveDistance * kArriveDistance)
             {
+                nav_mesh_agent_.isStopped = true;
                 wait_counter_ = kWaitTime;
                 patrol_counter_ = (patrol_counter_ + 1) % patrol_points_.Length;
             }

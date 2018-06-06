@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ProjectBaka
 {
@@ -9,6 +10,7 @@ namespace ProjectBaka
         [SerializeField] float kLerpSpeed = 5f;
         [SerializeField] float kRelyRange = 0.5f;
         private ActorController target_ = null;
+
         public void SetTarget(ActorController target)
         {
             target_ = target;
@@ -22,6 +24,7 @@ namespace ProjectBaka
         {
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<SphereCollider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
         }
 
         /// <summary>
@@ -32,6 +35,7 @@ namespace ProjectBaka
         {
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<SphereCollider>().enabled = true;
+            GetComponent<NavMeshAgent>().enabled = true;
         }
 
         /// <summary>
