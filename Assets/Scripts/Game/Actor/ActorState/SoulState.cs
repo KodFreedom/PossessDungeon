@@ -14,6 +14,7 @@ namespace ProjectBaka
         private RelyDetector rely_detector_ = null;
         private Animator animator_ = null;
         private NavMeshAgent nav_mesh_agent_ = null;
+        private bool is_swimming_ = false;
 
         // input
         private Vector3 direction_ = Vector3.zero;
@@ -110,7 +111,10 @@ namespace ProjectBaka
         public override void Swim(ActorController actor_controller)
         {
             if (actor_controller.GetActorParameter().CanSwimming == true)
+            {
+                is_swimming_ = true;
                 return;
+            }
 
             // 魂を消す
             soul_amount_ = 0f;
@@ -241,6 +245,13 @@ namespace ProjectBaka
             if (return_ == false 
                 || actor_controller.GetActorType() == ActorController.ActorType.kSoul)
                 return;
+
+            if (actor_controller.GetActorParameter().CanSwimming == true
+                && is_swimming_ == true)
+            {
+                is_swimming_ = false;
+                return;
+            }
 
             // Soul
             soul_.SetBrainType(ActorController.BrainType.kPlayer);
