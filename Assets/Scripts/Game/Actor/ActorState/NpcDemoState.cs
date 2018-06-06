@@ -9,7 +9,7 @@ namespace ProjectBaka
     {
         private readonly float kArriveDistance = 0.5f;
         private readonly float kWaitTime = 5f;
-        private Transform[] patrol_points_;
+        private PatrolPoints patrol_points_;
         private int patrol_counter_ = 0;
         private float wait_counter_ = 0f;
         private Animator animator_ = null;
@@ -17,7 +17,9 @@ namespace ProjectBaka
 
         public override void Init(ActorController actor_controller)
         {
-            patrol_points_ = GetComponent<PatrolPoints>().Points;
+            patrol_points_ = GetComponent<PatrolPoints>();
+            patrol_points_.RecalculatePoints();
+
             animator_ = GetComponentInChildren<Animator>();
             wait_counter_ = kWaitTime;
 
@@ -64,7 +66,7 @@ namespace ProjectBaka
 
         private void Patrol(ActorController actor_controller)
         {
-            if (patrol_points_.Length == 0) return;
+            if (patrol_points_.Points.Length == 0) return;
             if (wait_counter_ > 0f)
             {// しばらく待機
                 wait_counter_ -= Time.deltaTime;
@@ -78,15 +80,15 @@ namespace ProjectBaka
 
             // Move and turn
             nav_mesh_agent_.isStopped = false;
-            nav_mesh_agent_.SetDestination(patrol_points_[patrol_counter_].position);
+            nav_mesh_agent_.SetDestination(patrol_points_.Points[patrol_counter_]);
 
             // 目標にある程度近づいたら待機して、次の目標に移動する
-            if((transform.position - patrol_points_[patrol_counter_].position).sqrMagnitude
+            if((transform.position - patrol_points_.Points[patrol_counter_]).sqrMagnitude
                 <= kArriveDistance * kArriveDistance)
             {
                 nav_mesh_agent_.isStopped = true;
                 wait_counter_ = kWaitTime;
-                patrol_counter_ = (patrol_counter_ + 1) % patrol_points_.Length;
+                patrol_counter_ = (patrol_counter_ + 1) % patrol_points_.Points.Length;
             }
 
             if (animator_)
