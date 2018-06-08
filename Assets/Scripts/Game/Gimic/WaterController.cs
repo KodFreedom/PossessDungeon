@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ProjectBaka
 {
@@ -10,6 +11,7 @@ namespace ProjectBaka
         private int anonymous_layer_ = 0;
         private int carbuncle_layer_ = 0;
         private int soul_layer_ = 0;
+        private NavMeshObstacle nav_mesh_obstacle_ = null;
 
         // Use this for initialization
         private void Start()
@@ -18,6 +20,7 @@ namespace ProjectBaka
             anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
             carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");
             soul_layer_ = LayerMask.NameToLayer("Soul");
+            nav_mesh_obstacle_ = GetComponent<NavMeshObstacle>();
         }
 
         private void OnTriggerStay(Collider other)
@@ -27,6 +30,10 @@ namespace ProjectBaka
                 && other.gameObject.layer != carbuncle_layer_
                 && other.gameObject.layer != soul_layer_)
                 return;
+
+            var actor_controller = other.gameObject.GetComponent<ActorController>();
+
+            nav_mesh_obstacle_.enabled = !actor_controller.GetActorParameter().CanSwimming;
 
             other.gameObject.GetComponent<ActorController>().Swim();
         }
