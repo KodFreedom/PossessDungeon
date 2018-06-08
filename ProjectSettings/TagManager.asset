@@ -19,7 +19,7 @@ TagManager:
   - Golem
   - Anonymous
   - Carbuncle
-  - 
+  - StageSelectTex
   - 
   - 
   - 
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: StageSelect
+    uniqueID: 368535081
     locked: 0

@@ -10,10 +10,14 @@ public class CursorMove : MonoBehaviour {
     //==============================
     //           マクロ定義
     //==============================
-    private const float CURSOR_POS_X_LEFT = -250.0f;            // カーソルのX座標(左)
+    private const float CURSOR_POS_X_LEFT = -260.0f;            // カーソルのX座標(左)
     private const float CURSOR_POS_X_CENTER = 0.0f;             // カーソルのX座標(中央)
-    private const float CURSOR_POS_X_RIGHT = 250.0f;            // カーソルのX座標(右)
-    private const float CURSOR_POS_Y = 50.0f;                   // カーソルのY座標
+    private const float CURSOR_POS_X_RIGHT = 260.0f;            // カーソルのX座標(右)
+    private const float CURSOR_POS_Y = 30.0f;                   // カーソルのY座標
+
+    private const float CURSOR_SCALE_X = 1.5f;
+    private const float CURSOR_SCALE_Y = 1.5f;
+    private const float CURSOR_SCALE_Z = 1.0f;
 
     private const float CURSOR_ANIMATION_TIME_MAX = 1.5f;       // カーソルのアニメーションが完了するまでの時間
     private const float CURSOR_ANIMATION_MOVE_SPEED = 1.5f;     // カーソルのアニメーションの移動速度の加算値
@@ -30,32 +34,29 @@ public class CursorMove : MonoBehaviour {
     }
     POS_IDX pos_idx;
 
-    private RectTransform moveAfterRectPos;              // RectTransformの代入用の変数
+    private RectTransform moveAfterRectPos;             // RectTransformの代入用の変数
 
-    private int posIdx = 0;                              // 座標のインデックス番号(Idxで現在座標を管理)
+    private int posIdx = 0;                             // 座標のインデックス番号(Idxで現在座標を管理)
 
-    private bool animationFlg = false;                   // カーソルのアニメーションフラグ
+    private bool animationFlg = false;                  // カーソルのアニメーションフラグ
 
-    private float animationScaleSpeed = 0.0f;            // カーソルの拡大率の変動率
-    private float animationMoveSpeed = 0.0f;             // カーソルの座標移動の変動率
+    private float animationScaleSpeed = 0.0f;           // カーソルの拡大率の変動率
+    private float animationMoveSpeed = 0.0f;            // カーソルの座標移動の変動率
 
+    public GameObject leftDoor;                         // 左のドアのGameObjject宣言 
+    ChangeDoorColor leftDoorColor;                      // 左のドアのスクリプト実行用の変数
 
+    public GameObject centerDoor;                       // 中央のドアのGameObjject宣言
+    ChangeDoorColor centerDoorColor;                    // 中央のドアのスクリプト実行用の変数
 
-
-    public GameObject leftDoor;
-    ChangeDoorColor leftDoorColor;
-
-    public GameObject centerDoor;
-    ChangeDoorColor centerDoorColor;
-
-    public GameObject rightDoor;
-    ChangeDoorColor rightDoorColor;
+    public GameObject rightDoor;                        // 右のドアのGameObjject宣言
+    ChangeDoorColor rightDoorColor;                     // 右のドアのスクリプト実行用の変数
 
     //============================================================
     //                            初期処理
     //============================================================
     void Start () {
-
+        // コンポーネント取得
         leftDoorColor = leftDoor.GetComponent<ChangeDoorColor>();
         centerDoorColor = centerDoor.GetComponent<ChangeDoorColor>();
         rightDoorColor = rightDoor.GetComponent<ChangeDoorColor>();
@@ -66,6 +67,7 @@ public class CursorMove : MonoBehaviour {
     //============================================================
     void Update()
     {
+        // 現在座標の保存
         moveAfterRectPos = GetComponent<RectTransform>();
 
         // アニメーション中はステージ選択出来ないようにifで弾く
@@ -94,20 +96,20 @@ public class CursorMove : MonoBehaviour {
             switch (posIdx)
             {
                 case (int)POS_IDX.LEFT:
+                    // 座標変更、選択ステージの画像の色変更
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_LEFT, CURSOR_POS_Y);
-
                     SetChangeDoorColorFlag(true, false, false);
                     break;
 
                 case (int)POS_IDX.CENTER:
+                    // 座標変更、選択ステージの画像の色変更
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_CENTER, CURSOR_POS_Y);
-
                     SetChangeDoorColorFlag(false, true, false);
                     break;
 
                 case (int)POS_IDX.RIGHT:
+                    // 座標変更、選択ステージの画像の色変更
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_RIGHT, CURSOR_POS_Y);
-
                     SetChangeDoorColorFlag(false, false, true);
                     break;
             }
@@ -135,9 +137,9 @@ public class CursorMove : MonoBehaviour {
             animationScaleSpeed += CURSOR_ANIMATION_SCALE_SPEED;
 
 
-            moveAfterRectPos.localScale = new Vector3(1.5f - animationScaleSpeed,
-                                                        1.5f - animationScaleSpeed,
-                                                        1.0f);
+            moveAfterRectPos.localScale = new Vector3(  CURSOR_SCALE_X - animationScaleSpeed,
+                                                        CURSOR_SCALE_Y - animationScaleSpeed,
+                                                        CURSOR_SCALE_Z);
 
             moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_RIGHT * posIdx - CURSOR_POS_X_RIGHT,
                                                             CURSOR_POS_Y - animationMoveSpeed);
@@ -155,6 +157,7 @@ public class CursorMove : MonoBehaviour {
     //============================================================
     void SetChangeDoorColorFlag(bool doorFlag1, bool doorFlag2, bool doorFlag3)
     {
+        // ドア画像の色をtrueで完全表示、falseで半透明表示するメソッドを実行
         leftDoorColor.SetChangeDoorColorFlag(doorFlag1);
         centerDoorColor.SetChangeDoorColorFlag(doorFlag2);
         rightDoorColor.SetChangeDoorColorFlag(doorFlag3);
@@ -175,12 +178,12 @@ public class CursorMove : MonoBehaviour {
 
             // Stage2シーンに遷移
             case (int)POS_IDX.CENTER:
-                //SceneManager.Instance.ChangeScene("GameStage02");
+                SceneManager.Instance.ChangeScene("GameStage02");
                 break;
 
             // Stage3シーンに遷移
             case (int)POS_IDX.RIGHT:
-                //SceneManager.Instance.ChangeScene("GameStage03");
+                SceneManager.Instance.ChangeScene("GameStage03");
                 break;
         }
     }

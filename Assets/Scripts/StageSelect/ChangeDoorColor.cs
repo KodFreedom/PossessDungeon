@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeDoorColor : MonoBehaviour {
 
@@ -59,6 +60,6 @@ public class ChangeDoorColor : MonoBehaviour {
 
         doorColor = spriteColor;
         */
-        this.GetComponent<SpriteRenderer>().color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, spriteColor.a);
+        this.GetComponent</*SpriteRenderer*/Image>().color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, spriteColor.a);
     }
 }
