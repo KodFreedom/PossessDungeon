@@ -33,7 +33,7 @@ namespace ProjectBaka
 
         public override void Uninit(ActorController actor_controller)
         {
-
+            nav_mesh_agent_.isStopped = true;
         }
 
         public override void Act(ActorController actor_controller)

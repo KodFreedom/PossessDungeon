@@ -15,6 +15,7 @@ namespace ProjectBaka
         private Animator animator_ = null;
         private NavMeshAgent nav_mesh_agent_ = null;
         private bool is_swimming_ = false;
+        [SerializeField] float speed_rate_ = 1f;
 
         // input
         private Vector3 direction_ = Vector3.zero;
@@ -51,9 +52,14 @@ namespace ProjectBaka
 
             var parameter = actor_controller.GetActorParameter();
             nav_mesh_agent_ = GetComponent<NavMeshAgent>();
+            nav_mesh_agent_.velocity = Vector3.zero;
             nav_mesh_agent_.angularSpeed = parameter.TurnSpeed;
             nav_mesh_agent_.updatePosition = true;
             nav_mesh_agent_.updateRotation = false;
+
+            var rigidbody = GetComponent<Rigidbody>();
+            rigidbody.angularVelocity = Vector3.zero;
+            rigidbody.velocity = Vector3.zero;
         }
 
         /// <summary>
@@ -123,6 +129,9 @@ namespace ProjectBaka
         /// <param name="actor_controller"></param>
         public override void OnPushEnter(ActorController actor_controller)
         {
+            speed_rate_ = actor_controller.GetActorParameter().PushStrength;
+            speed_rate_ = speed_rate_ == 0f ? 1f : speed_rate_;
+
             if (!animator_) return;
             animator_.SetBool("push", true);
         }
@@ -133,6 +142,7 @@ namespace ProjectBaka
         /// <param name="actor_controller"></param>
         public override void OnPushExit(ActorController actor_controller)
         {
+            speed_rate_ = 1f;
             if (!animator_) return;
             animator_.SetBool("push", false);
         }
@@ -198,7 +208,7 @@ namespace ProjectBaka
             }
                 
             ActorParameter parameter = actor_controller.GetActorParameter();
-            nav_mesh_agent_.Move(direction_ * parameter.MoveSpeed * Time.deltaTime);
+            nav_mesh_agent_.Move(direction_ * parameter.MoveSpeed * speed_rate_ * Time.deltaTime);
 
             // 物理演算の時の回転を切ったのため直接にtransformで回転する
             direction_ = transform.InverseTransformDirection(direction_);

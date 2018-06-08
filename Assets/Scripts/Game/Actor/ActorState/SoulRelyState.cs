@@ -22,7 +22,6 @@ namespace ProjectBaka
         /// <param name="actor_controller"></param>
         public override void Init(ActorController actor_controller)
         {
-            GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<SphereCollider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
         }
@@ -33,7 +32,6 @@ namespace ProjectBaka
         /// <param name="actor_controller"></param>
         public override void Uninit(ActorController actor_controller)
         {
-            GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<SphereCollider>().enabled = true;
             GetComponent<NavMeshAgent>().enabled = true;
         }
