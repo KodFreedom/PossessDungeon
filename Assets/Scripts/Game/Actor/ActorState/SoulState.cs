@@ -79,8 +79,9 @@ namespace ProjectBaka
         {
             UpdateInput();
 
-            if (actor_controller.GetActorParameter().Life <= 0f)
-            {// 肉体が死ぬ時魂に戻る
+            if (actor_controller.GetActorParameter().Life <= 0f
+                || soul_amount_ <= 0f)
+            {
                 return_ = true;
             }
 
@@ -268,12 +269,17 @@ namespace ProjectBaka
             if(soul_amount_ <= 0f)
             {
                 soul_amount_ = 0f;
-                CameraController camera = Camera.main.GetComponent<CameraController>();
-                if (camera != null)
+
+                if(actor_controller.GetActorType() == ActorController.ActorType.kSoul)
                 {
-                    camera.SetTarget(null);
+                    CameraController camera = Camera.main.GetComponent<CameraController>();
+                    if (camera != null)
+                    {
+                        camera.SetTarget(null);
+                    }
+                    Destroy(gameObject);
+                    GameFlowController.Instance.GameOver();
                 }
-                Destroy(gameObject);
             }
         }
     }
