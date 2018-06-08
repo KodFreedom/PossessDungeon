@@ -446,11 +446,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114811467187518150, guid: ae45a2dd8d4667841a53955b85590f98,
-        type: 2}
-      propertyPath: life_rate_
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae45a2dd8d4667841a53955b85590f98, type: 2}
   m_IsPrefabParent: 0
@@ -667,7 +662,7 @@ Prefab:
     - target: {fileID: 224945827490197264, guid: 737bc8e7c7b774240a78e36aeb6c23f9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224945827490197264, guid: 737bc8e7c7b774240a78e36aeb6c23f9,
         type: 2}
@@ -718,15 +713,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1576723137971508, guid: 737bc8e7c7b774240a78e36aeb6c23f9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114098834942033700, guid: 737bc8e7c7b774240a78e36aeb6c23f9,
-        type: 2}
-      propertyPath: kNextSceneName
-      value: Demo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 737bc8e7c7b774240a78e36aeb6c23f9, type: 2}
@@ -894,7 +880,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4158722092348626, guid: ec706ea2f4cc53c4e80024955f1a21e4, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec706ea2f4cc53c4e80024955f1a21e4, type: 2}
