@@ -153,6 +153,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 195315208984036618, guid: 6fac16d8f63dd7747a057ac4234f0415,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fac16d8f63dd7747a057ac4234f0415, type: 2}
   m_IsPrefabParent: 0
@@ -530,6 +535,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 195458832757015938, guid: 3ea904659d4da53489008de0717a2162,
+        type: 2}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195458832757015938, guid: 3ea904659d4da53489008de0717a2162,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ea904659d4da53489008de0717a2162, type: 2}
   m_IsPrefabParent: 0
@@ -571,6 +586,16 @@ Prefab:
     - target: {fileID: 4393775159920668, guid: 6f535e5a74cdb3847b52f33e801dd101, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195992891876489078, guid: 6f535e5a74cdb3847b52f33e801dd101,
+        type: 2}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195992891876489078, guid: 6f535e5a74cdb3847b52f33e801dd101,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f535e5a74cdb3847b52f33e801dd101, type: 2}
@@ -755,6 +780,16 @@ Prefab:
     - target: {fileID: 4509198508486688, guid: bb7ec1a2ec2229d40b256ea37475b615, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 195762256097901600, guid: bb7ec1a2ec2229d40b256ea37475b615,
+        type: 2}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195762256097901600, guid: bb7ec1a2ec2229d40b256ea37475b615,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7ec1a2ec2229d40b256ea37475b615, type: 2}
