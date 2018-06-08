@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ProjectBaka;
-using UnityEditor;
-using UnityEngine.UI;
+//using UnityEditor;
+//using UnityEngine.UI;
 
 public class CursorMove : MonoBehaviour {
 
