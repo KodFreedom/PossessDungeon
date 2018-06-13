@@ -1264,7 +1264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1258796437790384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.56, y: 0, z: -5.55}
+  m_LocalPosition: {x: 40.6, y: 0, z: 42.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4641524068316290}
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_life_: 3000
   life_: 0
-  move_speed_: 1
+  move_speed_: 2.5
   turn_speed_: 720
   soul_damage_: 20
   fire_damage_: 0
@@ -1580,7 +1580,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1258796437790384}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.75
+  m_Radius: 0.9
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
