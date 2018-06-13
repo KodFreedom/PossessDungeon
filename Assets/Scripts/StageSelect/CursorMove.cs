@@ -52,14 +52,28 @@ public class CursorMove : MonoBehaviour {
     public GameObject rightDoor;                        // 右のドアのGameObjject宣言
     ChangeDoorColor rightDoorColor;                     // 右のドアのスクリプト実行用の変数
 
+    public GameObject easyImage;                        // 左のドアのeasy画像のGameObjject宣言 
+    ImageLogoAnimation easyImageText;                   // 左のドアのeasy画像のスクリプト実行用の変数
+
+    public GameObject normalImage;                      // 中央のドアのnormal画像のGameObjject宣言
+    ImageLogoAnimation normalImageText;                 // 中央のドアのnormal画像のスクリプト実行用の変数
+
+    public GameObject hardImage;                        // 右のドアのhard画像のGameObjject宣言
+    ImageLogoAnimation hardImageText;                   // 右のドアのhard画像のスクリプト実行用の変数
+
     //============================================================
     //                            初期処理
     //============================================================
     void Start () {
-        // コンポーネント取得
+        // ドア画像のコンポーネント取得
         leftDoorColor = leftDoor.GetComponent<ChangeDoorColor>();
         centerDoorColor = centerDoor.GetComponent<ChangeDoorColor>();
         rightDoorColor = rightDoor.GetComponent<ChangeDoorColor>();
+
+        // 難易度画像のコンポーネント取得
+        easyImageText = easyImage.GetComponent<ImageLogoAnimation>();
+        normalImageText = normalImage.GetComponent<ImageLogoAnimation>();
+        hardImageText = hardImage.GetComponent<ImageLogoAnimation>();
     }
 
     //============================================================
@@ -96,21 +110,24 @@ public class CursorMove : MonoBehaviour {
             switch (posIdx)
             {
                 case (int)POS_IDX.LEFT:
-                    // 座標変更、選択ステージの画像の色変更
+                    // 座標変更、選択ステージの画像の色変更、選択中の難易度の画像のアニメーション処理
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_LEFT, CURSOR_POS_Y);
                     SetChangeDoorColorFlag(true, false, false);
+                    SetImageLogoAnimationFlag(true, false, false);
                     break;
 
                 case (int)POS_IDX.CENTER:
-                    // 座標変更、選択ステージの画像の色変更
+                    // 座標変更、選択ステージの画像の色変更、選択中の難易度の画像のアニメーション処理
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_CENTER, CURSOR_POS_Y);
                     SetChangeDoorColorFlag(false, true, false);
+                    SetImageLogoAnimationFlag(false, true, false);
                     break;
 
                 case (int)POS_IDX.RIGHT:
-                    // 座標変更、選択ステージの画像の色変更
+                    // 座標変更、選択ステージの画像の色変更、選択中の難易度の画像のアニメーション処理
                     moveAfterRectPos.anchoredPosition = new Vector2(CURSOR_POS_X_RIGHT, CURSOR_POS_Y);
                     SetChangeDoorColorFlag(false, false, true);
+                    SetImageLogoAnimationFlag(false, false, true);
                     break;
             }
 
@@ -161,6 +178,17 @@ public class CursorMove : MonoBehaviour {
         leftDoorColor.SetChangeDoorColorFlag(doorFlag1);
         centerDoorColor.SetChangeDoorColorFlag(doorFlag2);
         rightDoorColor.SetChangeDoorColorFlag(doorFlag3);
+    }
+
+    //============================================================
+    //               ステージ選択時の色の変更
+    //============================================================
+    void SetImageLogoAnimationFlag(bool imageAnimationFlag1, bool imageAnimationFlag2, bool imageAnimationFlag3)
+    {
+        // ドア画像の色をtrueで完全表示、falseで半透明表示するメソッドを実行
+        easyImageText.SetImageLogoAnimationFlag(imageAnimationFlag1);
+        normalImageText.SetImageLogoAnimationFlag(imageAnimationFlag2);
+        hardImageText.SetImageLogoAnimationFlag(imageAnimationFlag3);
     }
 
 
