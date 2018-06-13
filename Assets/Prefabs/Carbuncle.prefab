@@ -645,8 +645,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892787346639278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.31, y: 1.196, z: -4.131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 44.76, y: 0, z: 13.35}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4249988518225732}
   - {fileID: 4861175657984050}
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max_life_: 800
   life_: 0
-  move_speed_: 4.5
+  move_speed_: 5
   turn_speed_: 3240
   soul_damage_: 5
   fire_damage_: 50
@@ -947,7 +947,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!137 &137058197182792972
 SkinnedMeshRenderer:
@@ -1027,7 +1027,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1892787346639278}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
