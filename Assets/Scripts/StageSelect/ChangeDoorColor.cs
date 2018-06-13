@@ -52,14 +52,9 @@ public class ChangeDoorColor : MonoBehaviour {
     //============================================================
     void ChangeColor(Color spriteColor)
     {
-        /*
-        GameObject obj = Selection.activeGameObject;
-
-        var spriteRenderer = obj.GetComponent<SpriteRenderer>();
-        var doorColor = spriteRenderer.color;
-
-        doorColor = spriteColor;
-        */
-        this.GetComponent</*SpriteRenderer*/Image>().color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, spriteColor.a);
+        this.GetComponent<Image>().color = new Color(spriteColor.r,
+                                                     spriteColor.g,
+                                                     spriteColor.b,
+                                                     spriteColor.a);
     }
 }
