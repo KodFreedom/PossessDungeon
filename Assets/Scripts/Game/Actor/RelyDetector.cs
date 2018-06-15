@@ -30,6 +30,7 @@ namespace ProjectBaka
             collider.center = new Vector3(0.0f, 0.0f, 5.0f);
             collider.size = new Vector3(2.0f, 5.0f, 10.0f);
 
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             golem_layer_ = LayerMask.NameToLayer("Golem");
             anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
             carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");

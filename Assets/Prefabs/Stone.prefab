@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4391066841343594}
   - component: {fileID: 33765075414985290}
   - component: {fileID: 23448514375380044}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4576f763388b32c44a46b77ddc3cb602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kMaxMass: 2
 --- !u!195 &195905534123752116
 NavMeshAgent:
   m_ObjectHideFlags: 1

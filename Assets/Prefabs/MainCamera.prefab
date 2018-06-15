@@ -97,9 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff34d16c6adfe944c924819a063fc555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kOffset: {x: 0, y: 1.5, z: -0.5}
   kLerpOverDistance: 0.01
-  kOffset: {x: 0, y: 5, z: -5}
+  kDistance: 5
   kMoveSpeed: 1
+  kMaxRotationX: 90
+  kRotationSpeed: 30
+  kWaitTime: 1
   kLockCursor: 0
 --- !u!124 &124483868021296290
 Behaviour:
