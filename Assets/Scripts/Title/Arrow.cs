@@ -22,12 +22,15 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private GameObject GameStartImg;
 
+    private AudioSource[] Audio;
+
     // Use this for initialization
     void Start()
     {
         ArrowRect = GetComponent<RectTransform>();
         DefaultPosY = ArrowRect.localPosition.y;
         FloatingVelocity = DefaultFloating;
+        Audio = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class Arrow : MonoBehaviour
                 ArrowRect.localPosition = new Vector3(ArrowRect.localPosition.x * -1, ArrowRect.localPosition.y, ArrowRect.localPosition.z);
                 ArrowFlag = !ArrowFlag;
                 ButtonReleaseFlag = true;
+                Audio[1].PlayOneShot(Audio[1].clip);
             }
             // 左入力
             else if (Input.GetAxisRaw("Horizontal") < -0.3f)
@@ -70,6 +74,8 @@ public class Arrow : MonoBehaviour
                 ArrowRect.localPosition = new Vector3(ArrowRect.localPosition.x * -1, ArrowRect.localPosition.y, ArrowRect.localPosition.z);
                 ArrowFlag = !ArrowFlag;
                 ButtonReleaseFlag = true;
+                Audio[1].PlayOneShot(Audio[1].clip);
+
             }
         }
         else if (Input.GetAxisRaw("Horizontal") == 0 && ButtonReleaseFlag == true)
@@ -95,11 +101,14 @@ public class Arrow : MonoBehaviour
         {
             if (Input.GetButtonDown("Submit") == true)
             {
+                // 決定音再生
+                Audio[0].PlayOneShot(Audio[0].clip);
+
                 if (ArrowFlag == false)
                 {
                     // シーン遷移
                     //SceneManager.Instance.ChangeScene("Tutorial");
-                    SceneChangeFlag = true;
+                    //SceneChangeFlag = true;
                 }
                 else if (ArrowFlag == true)
                 {
