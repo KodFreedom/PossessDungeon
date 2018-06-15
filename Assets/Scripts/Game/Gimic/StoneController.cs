@@ -7,7 +7,6 @@ namespace ProjectBaka
 {
     public class StoneController : MonoBehaviour
     {
-        [SerializeField] float kMaxMass = 2f;
         private int golem_layer_ = 0;
         private int anonymous_layer_ = 0;
         private int carbuncle_layer_ = 0;
