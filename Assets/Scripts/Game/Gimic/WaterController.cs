@@ -32,6 +32,10 @@ namespace ProjectBaka
                 return;
 
             var actor_controller = other.gameObject.GetComponent<ActorController>();
+            if(actor_controller.GetBrainType() != ActorController.BrainType.kPlayer)
+            {
+                return;
+            }
 
             nav_mesh_obstacle_.enabled = !actor_controller.GetActorParameter().CanSwimming;
 
