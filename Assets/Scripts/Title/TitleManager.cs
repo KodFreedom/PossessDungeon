@@ -13,11 +13,13 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private GameObject ArrowSelectImg;      // 矢印セレクト
 
+    private AudioSource[] Audio;
+    private bool GameStartFlag;
 
     // Use this for initialization
     void Start()
     {
-
+        Audio = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,13 @@ public class TitleManager : MonoBehaviour
     {
         if(Input.GetButtonDown("Submit") == true)
         {
+            // 決定音再生
+            if(GameStartFlag == false)
+            {
+                Audio[0].PlayOneShot(Audio[0].clip);
+                GameStartFlag = true;
+            }
+
             // ゲームスタートテキスト削除
             Destroy(GameStartText);
 
