@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dc2acc7ccd46e4f9cea221f037b42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kNextSceneName: Title
+  kNextSceneName: StageSelect
 --- !u!114 &114380684769782586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1254,9 +1254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Title
-
-'
+  m_Text: StageSelect
 --- !u!114 &114879450328687000
 MonoBehaviour:
   m_ObjectHideFlags: 1
