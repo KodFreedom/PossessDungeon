@@ -7,6 +7,7 @@ namespace ProjectBaka
 {
     public class SoulState : ActorState
     {
+        private static GameObject kActorLifeUiPrefab = null;
         public static readonly float kMaxSoulAmount = 2000f;
 
         [SerializeField] float soul_amount_ = 0f;
@@ -16,6 +17,7 @@ namespace ProjectBaka
         private NavMeshAgent nav_mesh_agent_ = null;
         private bool is_swimming_ = false;
         [SerializeField] float speed_rate_ = 1f;
+        private ActorLifeUiController life_ui_ = null;
 
         // input
         private Vector3 direction_ = Vector3.zero;
@@ -60,6 +62,17 @@ namespace ProjectBaka
             var rigidbody = GetComponent<Rigidbody>();
             rigidbody.angularVelocity = Vector3.zero;
             rigidbody.velocity = Vector3.zero;
+
+            if (kActorLifeUiPrefab == null)
+            {
+                kActorLifeUiPrefab = (GameObject)Resources.Load("Prefabs/ActorLifeUi", typeof(GameObject));
+            }
+
+            if (actor_controller.GetActorType() != ActorController.ActorType.kSoul)
+            {// Life ui
+                life_ui_ = GameObject.Instantiate(kActorLifeUiPrefab).GetComponent<ActorLifeUiController>();
+                life_ui_.SetTarget(transform);
+            }
         }
 
         /// <summary>
@@ -75,6 +88,11 @@ namespace ProjectBaka
             }
             
             Destroy(rely_detector_.gameObject);
+
+            if(life_ui_)
+            {
+                Destroy(life_ui_.gameObject);
+            }
         }
 
         /// <summary>
