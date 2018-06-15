@@ -13,6 +13,7 @@ namespace ProjectBaka
         private int soul_layer_ = 0;
         private NavMeshAgent nav_mesh_agent_ = null;
         private NavMeshObstacle nav_mesh_obstacle_ = null;
+        private AudioSource drag_se_ = null;
 
         private void Start()
         {
@@ -24,6 +25,7 @@ namespace ProjectBaka
             nav_mesh_obstacle_ = GetComponent<NavMeshObstacle>();
             nav_mesh_agent_.enabled = false;
             nav_mesh_obstacle_.enabled = true;
+            drag_se_ = GetComponent<AudioSource>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -41,6 +43,7 @@ namespace ProjectBaka
                 {
                     nav_mesh_agent_.enabled = true;
                     nav_mesh_obstacle_.enabled = false;
+                    drag_se_.Play();
                 }
                 else
                 {
@@ -67,6 +70,7 @@ namespace ProjectBaka
             nav_mesh_agent_.enabled = false;
             nav_mesh_obstacle_.enabled = true;
             actor_controller.OnPushExit();
+            drag_se_.Stop();
         }
     }
 }

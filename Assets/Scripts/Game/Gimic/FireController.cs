@@ -23,6 +23,12 @@ namespace ProjectBaka
             soul_layer_ = LayerMask.NameToLayer("Soul");
             ClearEditorMesh();
             CreateFireInErea();
+
+            // Fireの音の範囲を大きさによって変える
+            var fire_se = GetComponent<AudioSource>();
+            float max_scale = Mathf.Max(transform.localScale.x, transform.localScale.z);
+            fire_se.maxDistance *= max_scale;
+            fire_se.minDistance *= max_scale;
         }
 
         private void OnTriggerStay(Collider other)
