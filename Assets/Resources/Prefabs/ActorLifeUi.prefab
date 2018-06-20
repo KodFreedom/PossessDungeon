@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197578835994872}
   - component: {fileID: 114513284559202558}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ActorLifeUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4552462592449800}
   - component: {fileID: 33153560418263538}
   - component: {fileID: 23170211381171348}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4080701634670688}
   - component: {fileID: 33811185209140614}
   - component: {fileID: 23093808024032448}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
