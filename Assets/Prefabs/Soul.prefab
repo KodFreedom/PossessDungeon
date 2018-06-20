@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114429233765167800}
   - component: {fileID: 114002544009393710}
   - component: {fileID: 195315208984036618}
+  - component: {fileID: 114886603661347482}
   m_Layer: 8
   m_Name: Soul
   m_TagString: Player
@@ -43,6 +44,23 @@ GameObject:
   - component: {fileID: 199102288131308554}
   m_Layer: 0
   m_Name: Fire_Soul_CampFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1853312326442144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4484665705691016}
+  - component: {fileID: 114472352085910730}
+  - component: {fileID: 65909909557218548}
+  m_Layer: 2
+  m_Name: RelyDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,17 +98,31 @@ Transform:
   m_Father: {fileID: 4509237592826410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4484665705691016
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853312326442144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4509237592826410}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4509237592826410
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093181784789736}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.03, y: -0.5, z: 40.85}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 14.877134, y: -0.4000002, z: 6.0443516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4116592056083764}
+  - {fileID: 4484665705691016}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163,6 +195,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &65909909557218548
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853312326442144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 5, z: 10}
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!108 &108236257619131934
 Light:
   m_ObjectHideFlags: 1
@@ -172,9 +216,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.35294116, g: 1, b: 0.43772826, a: 1}
+  m_Color: {r: 0.16025089, g: 0.5735294, b: 0.21440467, a: 1}
   m_Intensity: 10
-  m_Range: 5
+  m_Range: 3
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -223,14 +267,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664c20274faa0b84689e53dea187a320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_life_: 0
-  life_: 0
+  max_life_: 100
+  life_: 100
   move_speed_: 4.5
   turn_speed_: 2160
   soul_damage_: 0
-  fire_damage_: 0
+  fire_damage_: 1
   push_strength_: 0
   can_swimming_: 0
+--- !u!114 &114472352085910730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853312326442144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b696699b08b0be41a97988d053eb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114886603661347482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093181784789736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1b810343d70744faec00e14649ed40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soul_amount_: 2000
+  speed_rate_: 1
 --- !u!135 &135214898375214376
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -255,7 +323,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 1000
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 2160
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -324,7 +392,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -248263841
+  randomSeed: 2097848928
   InitialModule:
     serializedVersion: 3
     enabled: 1
