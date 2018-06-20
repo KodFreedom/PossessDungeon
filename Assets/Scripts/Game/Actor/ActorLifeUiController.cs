@@ -42,6 +42,10 @@ namespace ProjectBaka
         void Start()
         {
             cover_ = transform.Find("Cover");
+
+            //var base_renderer = transform.Find("Base").GetComponent<MeshRenderer>();
+            var cover_renderer = cover_.GetComponent<MeshRenderer>();
+            cover_renderer.sortingOrder = 1;
         }
 
         // Update is called once per frame
