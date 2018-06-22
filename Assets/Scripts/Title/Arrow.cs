@@ -107,8 +107,8 @@ public class Arrow : MonoBehaviour
                 if (ArrowFlag == false)
                 {
                     // シーン遷移
-                    //SceneManager.Instance.ChangeScene("Tutorial");
-                    //SceneChangeFlag = true;
+                    SceneManager.Instance.ChangeScene("Tutorial");
+                    SceneChangeFlag = true;
                 }
                 else if (ArrowFlag == true)
                 {
