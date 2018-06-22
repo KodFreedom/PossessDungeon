@@ -43,7 +43,7 @@ namespace ProjectBaka
         }
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
             renderer_ = GetComponent<MeshRenderer>();
             renderer_.enabled = false;
