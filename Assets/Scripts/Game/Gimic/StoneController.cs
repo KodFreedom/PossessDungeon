@@ -59,18 +59,34 @@ namespace ProjectBaka
             }
         }
 
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.layer != golem_layer_)
+                return;
+
+            var actor_controller = other.gameObject.GetComponent<ActorController>();
+            if (actor_controller.GetBrainType() == ActorController.BrainType.kPlayer)
+                return;
+
+            drag_se_.Stop();
+        }
+
         private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.layer != golem_layer_
                 && other.gameObject.layer != anonymous_layer_
                 && other.gameObject.layer != carbuncle_layer_)
                 return;
+
+            drag_se_.Stop();
+
             var actor_controller = other.gameObject.GetComponent<ActorController>();
-            if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer) return;
+            if (actor_controller.GetBrainType() != ActorController.BrainType.kPlayer)
+                return;
+
             nav_mesh_agent_.enabled = false;
             nav_mesh_obstacle_.enabled = true;
             actor_controller.OnPushExit();
-            drag_se_.Stop();
         }
     }
 }
