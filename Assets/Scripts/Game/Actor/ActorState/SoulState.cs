@@ -43,10 +43,10 @@ namespace ProjectBaka
             {
                 camera.SetTarget(transform);
             }
-            MinimapCameraController minimap_camera = MinimapCameraController.Instance;
-            if(minimap_camera != null)
+
+            if(MinimapSystem.Instance)
             {
-                minimap_camera.SetTarget(transform);
+                MinimapSystem.Instance.Camera.SetTarget(transform);
             }
 
             animator_ = GetComponentInChildren<Animator>();
@@ -310,11 +310,12 @@ namespace ProjectBaka
                     {
                         camera.SetTarget(null);
                     }
-                    MinimapCameraController minimap_camera = MinimapCameraController.Instance;
-                    if (minimap_camera != null)
+
+                    if (MinimapSystem.Instance)
                     {
-                        minimap_camera.SetTarget(null);
+                        MinimapSystem.Instance.Camera.SetTarget(null);
                     }
+
                     Destroy(gameObject);
                     GameFlowController.Instance.GameOver();
                 }
