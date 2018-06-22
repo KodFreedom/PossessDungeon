@@ -115,7 +115,24 @@ namespace ProjectBaka
                     break;
             }
 
+            // Minimapでの表示
+            if(actor_type_ != ActorType.kSoul
+                && MinimapSystem.Instance)
+            {
+                MinimapSystem.Instance.RegisterActor(this);
+            }
+
             actor_state_.Init(this);
+        }
+
+        private void OnDestroy()
+        {
+            // Minimapでの非表示
+            if (actor_type_ != ActorType.kSoul
+                && MinimapSystem.Instance)
+            {
+                MinimapSystem.Instance.DeregisterActor(this);
+            }
         }
 
         // Update is called once per frame
