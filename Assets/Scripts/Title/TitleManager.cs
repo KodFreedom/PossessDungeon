@@ -19,6 +19,9 @@ public class TitleManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // スクリーンサイズを設定
+        Screen.SetResolution(1920, 1080, true, 60);
+
         Audio = GetComponents<AudioSource>();
     }
 
