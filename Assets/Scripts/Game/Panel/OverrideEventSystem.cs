@@ -21,6 +21,11 @@ namespace ProjectBaka
         /////////////////////////////////////////////////////////////////////////
         // Public関数
         /////////////////////////////////////////////////////////////////////////
+        public GameObject GetLastSelected()
+        {
+            return last_selected_;
+        }
+
         public void SetSelectedObject(GameObject game_object)
         {
             last_selected_ = game_object;

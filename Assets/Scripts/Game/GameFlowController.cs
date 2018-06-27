@@ -29,6 +29,7 @@ namespace ProjectBaka
             kPausePanel.Disable();
             Time.timeScale = 1f;
             OverrideEventSystem.Instance.SetSelectedObject(null);
+            Input.ResetInputAxes();
         }
 
         /// <summary> ゲームクリア処理 </summary>
