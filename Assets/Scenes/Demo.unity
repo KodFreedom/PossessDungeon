@@ -1117,7 +1117,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7ec1a2ec2229d40b256ea37475b615, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1930199001
+--- !u!1001 &1877142009
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1155,11 +1155,6 @@ Prefab:
     - target: {fileID: 4662505915927128, guid: 5bd2e44839ad9a1478fd793b057572f1, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 82879725243335450, guid: 5bd2e44839ad9a1478fd793b057572f1,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bd2e44839ad9a1478fd793b057572f1, type: 2}

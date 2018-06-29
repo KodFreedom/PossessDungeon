@@ -26,6 +26,10 @@ namespace ProjectBaka
             nav_mesh_agent_.enabled = false;
             nav_mesh_obstacle_.enabled = true;
             drag_se_ = GetComponent<AudioSource>();
+
+            // 岩の回転をランダムにする
+            var child = transform.GetChild(0);
+            child.rotation = Quaternion.Euler(0f, Random.Range(-Mathf.PI, Mathf.PI) * 180f, 0f);
         }
 
         private void OnTriggerEnter(Collider other)
