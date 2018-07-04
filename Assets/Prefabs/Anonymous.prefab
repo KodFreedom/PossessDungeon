@@ -436,7 +436,7 @@ MonoBehaviour:
   move_speed_: 3.5
   turn_speed_: 1440
   soul_damage_: 10
-  fire_damage_: 100
+  fire_damage_: 200
   push_strength_: 0.3
   can_swimming_: 1
 --- !u!135 &135654966752038802
