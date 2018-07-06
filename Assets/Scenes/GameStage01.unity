@@ -1077,11 +1077,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114297212478320936, guid: 737bc8e7c7b774240a78e36aeb6c23f9,
-        type: 2}
-      propertyPath: kNextSceneName
-      value: GameStage01
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 737bc8e7c7b774240a78e36aeb6c23f9, type: 2}
   m_IsPrefabParent: 0
