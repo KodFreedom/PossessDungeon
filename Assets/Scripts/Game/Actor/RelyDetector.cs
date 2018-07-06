@@ -27,8 +27,8 @@ namespace ProjectBaka
             transform.localRotation = Quaternion.identity;
             var collider = gameObject.AddComponent<BoxCollider>();
             collider.isTrigger = true;
-            collider.center = new Vector3(0.0f, 0.0f, 5.0f);
-            collider.size = new Vector3(2.0f, 5.0f, 10.0f);
+            collider.center = new Vector3(0.0f, 0.0f, 1.0f);
+            collider.size = new Vector3(2.0f, 5.0f, 2.0f);
 
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             golem_layer_ = LayerMask.NameToLayer("Golem");
