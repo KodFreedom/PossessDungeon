@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dc2acc7ccd46e4f9cea221f037b42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kNextSceneName: Game
+  kNextSceneName: GameStage01
 --- !u!114 &114312473821851602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,7 +623,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Title
+  m_Text: 'StageSelect
 
 '
 --- !u!114 &114345267968121662
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dc2acc7ccd46e4f9cea221f037b42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kNextSceneName: Title
+  kNextSceneName: StageSelect
 --- !u!114 &114375793242444002
 MonoBehaviour:
   m_ObjectHideFlags: 1
