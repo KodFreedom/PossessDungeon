@@ -1909,34 +1909,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4629498980996910, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
       propertyPath: m_LocalScale.x
-      value: 38.16486
+      value: 36.57
       objectReference: {fileID: 0}
     - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
       propertyPath: m_LocalScale.z
-      value: 16.733084
+      value: 16.66
       objectReference: {fileID: 0}
-    - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.7679642
-      objectReference: {fileID: 0}
-    - target: {fileID: 23799875078963782, guid: b9c17032ae919c34c857ba3da7c42457,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 35d7463e55a4a984595d3ecd500fecc3, type: 2}
-    - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.86600006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -95.049
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760096234668790, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.33400002
+    - target: {fileID: 4629498980996910, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
@@ -2475,6 +2462,10 @@ Prefab:
     - target: {fileID: 1317172826434068, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
       propertyPath: m_Name
       value: Water (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629498980996910, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9c17032ae919c34c857ba3da7c42457, type: 2}
