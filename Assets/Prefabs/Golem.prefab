@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4891498563622344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4486471222775922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4419659447399632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4195661935501796}
   - component: {fileID: 137264079906422334}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4638744379745898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4795288950122638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4393816461179294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_108
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4732318811489968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4728659250203732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_109
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4754599598345752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4215531872982082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4982068160559482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4531513509152068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695391006107536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4978952546137776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4201547882472830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4919747448858058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4837041268269960}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4856664839161750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4792328142396490}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4162966967475720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4774027278575398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4597542134715170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536045995591884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4172782947401052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_103
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4511465378826390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4268090109255568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_65
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4083477906233866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4169691348555076}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4182174537711968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4029630198457816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4108414879198410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4132202440272678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_106
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4789085562596626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_101
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4117547664375408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4800569100813610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +611,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4904293868144116}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4901048791677662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4102563063807682}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4847192446703768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4461298065081370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_104
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4499872242911818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4078404472317132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: infernal2_bone_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4641524068316290}
   - component: {fileID: 95730453688129828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GolemModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1258796437790384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.6, y: 0, z: 42.2}
+  m_LocalPosition: {x: -8.56, y: 0, z: -1.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4641524068316290}
@@ -1591,5 +1591,5 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 4

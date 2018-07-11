@@ -12,7 +12,6 @@ namespace ProjectBaka
         private int anonymous_layer_ = 0;
         private int carbuncle_layer_ = 0;
         private int soul_layer_ = 0;
-        private NavMeshObstacle nav_mesh_obstacle_ = null;
         private List<ParticleSystem> splashes_ = null;
 
 
@@ -23,7 +22,6 @@ namespace ProjectBaka
             anonymous_layer_ = LayerMask.NameToLayer("Anonymous");
             carbuncle_layer_ = LayerMask.NameToLayer("Carbuncle");
             soul_layer_ = LayerMask.NameToLayer("Soul");
-            nav_mesh_obstacle_ = GetComponent<NavMeshObstacle>();
 
             if (kSplashPrefab == null)
             {
@@ -78,8 +76,6 @@ namespace ProjectBaka
             {
                 return;
             }
-
-            nav_mesh_obstacle_.enabled = !actor_controller.GetActorParameter().CanSwimming;
 
             other.gameObject.GetComponent<ActorController>().Swim();
         }
