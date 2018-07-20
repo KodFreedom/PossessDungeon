@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 8db25b78d2f2e414b8cdcf8ec586ff7d
-timeCreated: 1527491312
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -108,6 +106,7 @@ ModelImporter:
     7400002: mixamo.com
     9500000: //RootNode
     13700000: infernal2
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -127,6 +126,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
